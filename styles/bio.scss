@@ -2,35 +2,60 @@
 @use "./partials/mixins" as *;
 
 @font-face {
-  font-family: AvenirNext-Bold;
-  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTPro.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: AvenirNext-Demi;
-  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTProDemi.ttf");
+  font-weight: 600;
 }
 
 @font-face {
-  font-family: AvenirNext-Regular;
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTProBold.ttf");
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "AvenirNext", sans-serif;
+  font-weight: 400;
 }
 
 body {
   margin: 0;
-  font-family: "AvenirNext-Regular", sans-serif;
+  width: 100%;
   color: $primary-color-black;
 
   img {
     width: 100%;
+  }
+
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+      line-height: 1.375rem;
+    }
+
+    @include desktop {
+      font-size: 0.975rem;
+      line-height: 1.6rem;
+    }
   }
 }
 
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNext-Bold", sans-serif;
+  font-weight: 600;
   margin: 0;
+
   @include tablet {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -40,8 +65,9 @@ h1 {
 h2 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNext-Bold", sans-serif;
+  font-weight: 600;
   margin: 0;
+
   @include tablet {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -51,21 +77,12 @@ h2 {
 h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-family: "AvenirNext-Demi", sans-serif;
+  font-weight: 600;
   margin: 0;
+
   @include tablet {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-}
-
-body p {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-family: "AvenirNext-Regular", sans-serif;
-  @include tablet {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
   }
 }
 
@@ -73,10 +90,16 @@ footer p,
 footer a {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: "AvenirNext-Regular", sans-serif;
+  font-weight: 400;
+
   @include tablet {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  @include desktop {
+    font-size: 0.975rem;
+    line-height: 1.6rem;
   }
 }
 
@@ -84,7 +107,8 @@ footer a {
 .button {
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-family: "AvenirNext-Bold", sans-serif;
+  font-weight: 700;
+
   @include tablet {
     font-size: 0.75rem;
     line-height: 1.25rem;
@@ -93,7 +117,7 @@ footer a {
 
 .header {
   background-color: $primary-color-black;
-  width: 100vw;
+  width: 100%;
   height: 5rem;
   position: fixed;
   top: 0;
@@ -106,7 +130,7 @@ footer a {
   }
 
   @include desktop {
-    padding-left: 7.5rem;
+    padding: 0 8rem;
     height: 6rem;
   }
 
@@ -151,12 +175,12 @@ footer a {
         width: 100%;
 
         @include tablet {
-          padding: 0.5rem 0;
+          padding: 1.7rem 0;
           height: 100%;
         }
 
         @include desktop {
-          padding: 0.66rem 0;
+          padding: 2.2rem 0;
         }
       }
     }
@@ -170,6 +194,7 @@ footer a {
 }
 
 .hero {
+  width: 100%;
   margin-top: 5rem;
   height: 40vh;
   min-height: 100px;
@@ -183,13 +208,13 @@ footer a {
   padding: 1rem;
 
   @include tablet {
-    height: 60vh;
+    height: 80vh;
     padding-left: 2.25rem;
   }
 
   @include desktop {
     height: 90vh;
-    padding-left: 7.5rem;
+    padding: 0 8rem;
   }
 
   &::before {
@@ -210,7 +235,7 @@ footer a {
 
 .bio {
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   padding: 1.5rem 1rem 0;
 
   @include tablet {
@@ -218,24 +243,20 @@ footer a {
   }
 
   @include desktop {
-    padding: 7.5rem;
+    padding: 3.5rem 8rem;
   }
 
   h2 {
     margin: 0 0 1rem 0;
-
-    @include desktop {
-      padding-top: 1.3rem;
-    }
   }
 
   &__content {
     @include tablet {
-      padding: 1rem 3rem;
+      padding: 1rem 3.5rem;
     }
 
     @include desktop {
-      padding-top: 1.5rem;
+      padding: 1.5rem 7rem;
     }
 
     img {
@@ -251,14 +272,22 @@ footer a {
       width: 100%;
       display: flex;
       justify-content: center;
+      margin: auto;
       margin-bottom: 2rem;
     }
 
     @include desktop {
-      width: 80%;
-      // don't know why not center
+      height: 65vh;
       display: flex;
       justify-content: center;
+    }
+  }
+
+  &__quote {
+    margin-top: 0.8rem;
+
+    @include desktop {
+      width: 80%;
     }
   }
 
@@ -268,6 +297,10 @@ footer a {
     @include tablet {
       font-size: 1rem;
       font-weight: 600;
+    }
+
+    @include desktop {
+      font-size: 1.1rem;
     }
   }
 
@@ -292,6 +325,7 @@ footer a {
 }
 
 .gallery {
+  width: 100%;
   padding: 1.5rem 1rem 1rem;
   background-color: $secondary-color-alabaster;
 
@@ -300,7 +334,7 @@ footer a {
   }
 
   @include desktop {
-    padding: 7.5rem;
+    padding: 2.5rem 8rem;
   }
 
   h2 {
@@ -316,7 +350,7 @@ footer a {
     }
 
     @include desktop {
-      margin: 0.6rem 0;
+      margin: 0.7rem 0;
     }
   }
 
@@ -330,6 +364,7 @@ footer a {
 }
 
 .footer {
+  width: 100%;
   background-color: $primary-color-black;
   color: $primary-color-white;
   padding: 2rem 1rem 2rem;
@@ -339,7 +374,7 @@ footer a {
   }
 
   @include desktop {
-    padding: 2.5rem 7.5rem;
+    padding: 2.5rem 8rem;
   }
 
   p {
@@ -379,16 +414,29 @@ footer a {
     @include tablet {
       margin-left: 3rem;
     }
+
+    @include desktop {
+      padding: 0;
+    }
+
+    img {
+      @include desktop {
+        height: 25px;
+        width: auto;
+      }
+    }
   }
 
   &__secondary-title {
     font-weight: bold;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   a {
     color: $primary-color-white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   &__logo-above {
@@ -415,6 +463,12 @@ footer a {
 
     @include tablet {
       display: none;
+    }
+  }
+
+  &__copyright {
+    @include tablet {
+      padding-top: 1rem;
     }
   }
 }
