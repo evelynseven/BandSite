@@ -1,0 +1,357 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+@font-face {
+  font-family: AvenirNext-Bold;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: AvenirNext-Demi;
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
+}
+
+@font-face {
+  font-family: AvenirNext-Regular;
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+}
+
+body {
+  margin: 0;
+  font-family: "AvenirNext-Regular", sans-serif;
+  color: $primary-color-black;
+
+  img {
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "AvenirNext-Bold", sans-serif;
+  margin: 0;
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "AvenirNext-Bold", sans-serif;
+  margin: 0;
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: "AvenirNext-Demi", sans-serif;
+  margin: 0;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+body p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "AvenirNext-Regular", sans-serif;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+footer p,
+footer a {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "AvenirNext-Regular", sans-serif;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.label,
+.button {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-family: "AvenirNext-Bold", sans-serif;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
+.header {
+  background-color: $primary-color-black;
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding-left: 2.25rem;
+  }
+
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 1.25rem;
+      max-width: 7.5rem;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    text-align: center;
+
+    @include tablet {
+      margin-left: 2rem;
+    }
+
+    li {
+      width: 50vw;
+
+      @include tablet {
+        width: auto;
+        margin: 0 2rem;
+      }
+
+      a {
+        color: $secondary-color-mercury;
+        text-decoration: none;
+        padding: 0 0 0.5rem 0;
+        display: inline-block;
+        width: 100%;
+
+        @include tablet {
+          padding: 0.5rem 0;
+          height: 100%;
+        }
+      }
+    }
+
+    .active {
+      color: $primary-color-white;
+      font-weight: bold;
+      border-bottom: 3px solid $primary-color-white;
+    }
+  }
+}
+
+.hero {
+  margin-top: 5rem;
+  height: 40vh;
+  min-height: 100px;
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: $primary-color-white;
+  padding: 1rem;
+
+  @include tablet {
+    height: 60vh;
+    padding-left: 2.25rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color-black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  h1 {
+    z-index: 2;
+  }
+}
+
+.bio {
+  padding: 1.5rem 1rem 0;
+
+  @include tablet {
+    padding: 2.5rem;
+  }
+
+  h2 {
+    margin: 0 0 1rem 0;
+  }
+
+  &__content {
+    @include tablet {
+      padding: 1rem 3rem;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__img-container {
+    @include tablet {
+      height: 50vh;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__quote-sign {
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  &__article-title {
+    @include tablet {
+      margin: 3rem 0 1.5rem;
+    }
+  }
+
+  &__article-content {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    p {
+      @include tablet {
+        width: 48%;
+      }
+    }
+  }
+}
+
+.gallery {
+  padding: 1.5rem 1rem 1rem;
+  background-color: $secondary-color-alabaster;
+
+  @include tablet {
+    padding: 2.5rem;
+  }
+
+  h2 {
+    margin: 0 0 1rem 0;
+  }
+
+  img {
+    margin: 0.3125rem 0;
+    @include tablet {
+      width: 32%;
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__img-container {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color-black;
+  color: $primary-color-white;
+  padding: 2rem 1rem 2rem;
+
+  @include tablet {
+    padding: 2.25rem;
+  }
+
+  &__first-row {
+    @include tablet {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 1rem 0;
+    }
+  }
+
+  &__second-row {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 7.5rem;
+
+    @include tablet {
+      margin-left: 3rem;
+    }
+  }
+
+  &__secondary-title {
+    font-weight: bold;
+  }
+
+  a {
+    color: $primary-color-white;
+    text-decoration: none;
+  }
+
+  &__logo-above {
+    width: 100%;
+    height: 100%;
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+    margin-top: 1.5rem;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      margin-left: auto;
+    }
+  }
+
+  &__logo-below {
+    width: 100%;
+    height: 100%;
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+    margin-top: 1.5rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
