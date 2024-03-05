@@ -105,6 +105,11 @@ footer a {
     padding-left: 2.25rem;
   }
 
+  @include desktop {
+    padding-left: 7.5rem;
+    height: 6rem;
+  }
+
   &__logo-container {
     display: flex;
     justify-content: center;
@@ -149,6 +154,10 @@ footer a {
           padding: 0.5rem 0;
           height: 100%;
         }
+
+        @include desktop {
+          padding: 0.66rem 0;
+        }
       }
     }
 
@@ -178,6 +187,11 @@ footer a {
     padding-left: 2.25rem;
   }
 
+  @include desktop {
+    height: 90vh;
+    padding-left: 7.5rem;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -195,19 +209,33 @@ footer a {
 }
 
 .bio {
+  box-sizing: border-box;
+  width: 100vw;
   padding: 1.5rem 1rem 0;
 
   @include tablet {
     padding: 2.5rem;
   }
 
+  @include desktop {
+    padding: 7.5rem;
+  }
+
   h2 {
     margin: 0 0 1rem 0;
+
+    @include desktop {
+      padding-top: 1.3rem;
+    }
   }
 
   &__content {
     @include tablet {
       padding: 1rem 3rem;
+    }
+
+    @include desktop {
+      padding-top: 1.5rem;
     }
 
     img {
@@ -220,8 +248,17 @@ footer a {
 
   &__img-container {
     @include tablet {
-      height: 50vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
       margin-bottom: 2rem;
+    }
+
+    @include desktop {
+      width: 80%;
+      // don't know why not center
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -262,15 +299,24 @@ footer a {
     padding: 2.5rem;
   }
 
+  @include desktop {
+    padding: 7.5rem;
+  }
+
   h2 {
     margin: 0 0 1rem 0;
   }
 
   img {
     margin: 0.3125rem 0;
+
     @include tablet {
       width: 32%;
       margin: 0.5rem 0;
+    }
+
+    @include desktop {
+      margin: 0.6rem 0;
     }
   }
 
@@ -292,11 +338,22 @@ footer a {
     padding: 2.25rem;
   }
 
+  @include desktop {
+    padding: 2.5rem 7.5rem;
+  }
+
+  p {
+    @include desktop {
+      margin: 2rem 0;
+    }
+  }
+
   &__first-row {
     @include tablet {
       width: 100%;
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       padding: 1rem 0;
     }
   }
@@ -306,6 +363,10 @@ footer a {
       display: flex;
       justify-content: space-between;
       padding: 1rem 0;
+    }
+
+    @include desktop {
+      width: 70%;
     }
   }
 
@@ -322,6 +383,7 @@ footer a {
 
   &__secondary-title {
     font-weight: bold;
+    margin: 2rem 0;
   }
 
   a {
@@ -339,6 +401,7 @@ footer a {
 
     @include tablet {
       display: inline-block;
+      margin: 0;
       margin-left: auto;
     }
   }

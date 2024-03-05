@@ -113,6 +113,12 @@ footer a {
     padding-left: 2.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .header {
+    padding-left: 7.5rem;
+    height: 6rem;
+  }
+}
 .header__logo-container {
   display: flex;
   justify-content: center;
@@ -159,6 +165,11 @@ footer a {
     height: 100%;
   }
 }
+@media screen and (min-width: 1280px) {
+  .header ul li a {
+    padding: 0.66rem 0;
+  }
+}
 .header ul .active {
   color: #ffffff;
   font-weight: bold;
@@ -184,6 +195,12 @@ footer a {
     padding-left: 2.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 90vh;
+    padding-left: 7.5rem;
+  }
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -199,6 +216,8 @@ footer a {
 }
 
 .bio {
+  box-sizing: border-box;
+  width: 100vw;
   padding: 1.5rem 1rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -206,12 +225,27 @@ footer a {
     padding: 2.5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .bio {
+    padding: 7.5rem;
+  }
+}
 .bio h2 {
   margin: 0 0 1rem 0;
+}
+@media screen and (min-width: 1280px) {
+  .bio h2 {
+    padding-top: 1.3rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .bio__content {
     padding: 1rem 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bio__content {
+    padding-top: 1.5rem;
   }
 }
 .bio__content img {
@@ -224,8 +258,17 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .bio__img-container {
-    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bio__img-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
   }
 }
 .bio__quote-sign {
@@ -263,6 +306,11 @@ footer a {
     padding: 2.5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .gallery {
+    padding: 7.5rem;
+  }
+}
 .gallery h2 {
   margin: 0 0 1rem 0;
 }
@@ -273,6 +321,11 @@ footer a {
   .gallery img {
     width: 32%;
     margin: 0.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery img {
+    margin: 0.6rem 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -293,11 +346,22 @@ footer a {
     padding: 2.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 2.5rem 7.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer p {
+    margin: 2rem 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .footer__first-row {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     padding: 1rem 0;
   }
 }
@@ -306,6 +370,11 @@ footer a {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__second-row {
+    width: 70%;
   }
 }
 .footer__icon-container {
@@ -321,6 +390,7 @@ footer a {
 }
 .footer__secondary-title {
   font-weight: bold;
+  margin: 2rem 0;
 }
 .footer a {
   color: #ffffff;
@@ -337,6 +407,7 @@ footer a {
 @media screen and (min-width: 768px) {
   .footer__logo-above {
     display: inline-block;
+    margin: 0;
     margin-left: auto;
   }
 }
