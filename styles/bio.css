@@ -199,7 +199,7 @@ footer a {
 .header ul li .active::after {
   content: "";
   position: absolute;
-  top: 0.85rem;
+  top: 0.7rem;
   left: 0;
   height: 100%;
   width: 100%;
@@ -207,7 +207,7 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .header ul li .active::after {
-    top: 2.25rem;
+    top: 2.19rem;
   }
 }
 
