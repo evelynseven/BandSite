@@ -21,11 +21,10 @@
 
 * {
   box-sizing: border-box;
-  font-family: "AvenirNext", sans-serif;
-  font-weight: 400;
 }
 
 body {
+  font-family: "AvenirNext", sans-serif;
   margin: 0;
   width: 100%;
   color: $primary-color-black;
@@ -35,8 +34,8 @@ body {
   }
 
   p {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+    font-size: 1.1rem;
+    line-height: 1.75rem;
 
     @include tablet {
       font-size: 0.9rem;
@@ -57,8 +56,11 @@ h1 {
   margin: 0;
 
   @include tablet {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    font-size: 5rem;
+  }
+
+  @include desktop {
+    font-size: 4rem;
   }
 }
 
@@ -69,8 +71,12 @@ h2 {
   margin: 0;
 
   @include tablet {
-    font-size: 2.25rem;
+    font-size: 3rem;
     line-height: 2.75rem;
+  }
+
+  @include tablet {
+    font-size: 2.5rem;
   }
 }
 
@@ -88,18 +94,18 @@ h3 {
 
 footer p,
 footer a {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
   font-weight: 400;
 
   @include tablet {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1.15rem;
+    line-height: 1.75rem;
   }
 
   @include desktop {
-    font-size: 0.975rem;
-    line-height: 1.6rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -118,7 +124,7 @@ footer a {
 .header {
   background-color: $primary-color-black;
   width: 100%;
-  height: 5rem;
+  height: 6.25rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -131,25 +137,28 @@ footer a {
 
   @include desktop {
     padding: 0 8rem;
-    height: 6rem;
   }
 
   &__logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0 0 0;
     height: 60%;
 
+    @include tablet {
+      padding: 0;
+    }
+
     img {
-      width: 100%;
-      height: 100%;
-      max-height: 1.25rem;
-      max-width: 7.5rem;
+      width: 9.375rem;
+      max-height: 2.5rem;
+      max-width: 15rem;
     }
   }
 
   ul {
-    padding: 0;
+    padding: 0.2rem 0;
     margin: 0;
     list-style: none;
     display: flex;
@@ -161,6 +170,7 @@ footer a {
 
     li {
       width: 50vw;
+      position: relative;
 
       @include tablet {
         width: auto;
@@ -170,32 +180,36 @@ footer a {
       a {
         color: $secondary-color-mercury;
         text-decoration: none;
-        padding: 0 0 0.5rem 0;
         display: inline-block;
         width: 100%;
+        font-size: 1.1rem;
+      }
 
-        @include tablet {
-          padding: 1.7rem 0;
+      .active {
+        color: $primary-color-white;
+        font-weight: 600;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0.85rem;
+          left: 0;
           height: 100%;
-        }
+          width: 100%;
+          border-bottom: 4px solid $primary-color-white;
 
-        @include desktop {
-          padding: 2.2rem 0;
+          @include tablet {
+            top: 2.25rem;
+          }
         }
       }
-    }
-
-    .active {
-      color: $primary-color-white;
-      font-weight: bold;
-      border-bottom: 3px solid $primary-color-white;
     }
   }
 }
 
 .hero {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 6.25rem;
   height: 40vh;
   min-height: 100px;
   background-image: url("../assets/images/hero-bio.jpg");
@@ -208,7 +222,7 @@ footer a {
   padding: 1rem;
 
   @include tablet {
-    height: 80vh;
+    height: 85vh;
     padding-left: 2.25rem;
   }
 
@@ -236,27 +250,31 @@ footer a {
 .bio {
   box-sizing: border-box;
   width: 100%;
-  padding: 1.5rem 1rem 0;
+  padding: 0 1rem;
 
   @include tablet {
-    padding: 2.5rem;
+    padding: 0 2.5rem 1.5rem;
   }
 
   @include desktop {
-    padding: 3.5rem 8rem;
+    padding: 0 8rem 2rem;
   }
 
   h2 {
-    margin: 0 0 1rem 0;
+    margin: $padding-before-headline-m 0 $padding-after-headline-m 0;
+
+    @include tablet {
+      margin: $padding-before-headline 0 $padding-after-headline 0;
+    }
   }
 
   &__content {
     @include tablet {
-      padding: 1rem 3.5rem;
+      padding: 0 5rem;
     }
 
     @include desktop {
-      padding: 1.5rem 7rem;
+      padding: 0 6.5rem;
     }
 
     img {
@@ -284,29 +302,47 @@ footer a {
   }
 
   &__quote {
-    margin-top: 0.8rem;
+    margin-top: $padding-between-components-m;
+    font-size: 1.2rem;
+    line-height: 2rem;
+
+    @include tablet {
+      font-size: 1.85rem;
+      line-height: 2.5rem;
+    }
 
     @include desktop {
+      font-size: 1.55rem;
       width: 80%;
     }
   }
 
   &__quote-sign {
+    font-size: 1.2rem;
     font-weight: 600;
+    margin: $padding-between-components-m 0;
 
     @include tablet {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.3rem;
     }
 
     @include desktop {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
   }
 
   &__article-title {
+    margin: 2rem 0 $padding-between-components-m;
+    font-size: 1.2rem;
+
     @include tablet {
       margin: 3rem 0 1.5rem;
+      font-size: 1.85rem;
+      line-height: 2.5rem;
+    }
+
+    @include desktop {
+      font-weight: 500;
     }
   }
 
@@ -319,6 +355,13 @@ footer a {
     p {
       @include tablet {
         width: 48%;
+        font-size: 1.15rem;
+        line-height: 1.75rem;
+      }
+
+      @include desktop {
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
     }
   }
@@ -339,17 +382,23 @@ footer a {
 
   h2 {
     margin: 0 0 1rem 0;
+
+    @include tablet {
+      font-size: 3rem;
+      margin: 2rem 0;
+    }
   }
 
   img {
     margin: 0.3125rem 0;
 
     @include tablet {
-      width: 32%;
-      margin: 0.5rem 0;
+      width: 31%;
+      margin: 1rem 0;
     }
 
     @include desktop {
+      width: 32%;
       margin: 0.7rem 0;
     }
   }
@@ -367,17 +416,21 @@ footer a {
   width: 100%;
   background-color: $primary-color-black;
   color: $primary-color-white;
-  padding: 2rem 1rem 2rem;
+  padding: 2rem 1rem 1rem;
 
   @include tablet {
-    padding: 2.25rem;
+    padding: 2.25rem 1rem 3rem;
   }
 
   @include desktop {
-    padding: 2.5rem 8rem;
+    padding: 2.5rem 8rem 3rem;
   }
 
   p {
+    @include tablet {
+      margin: 1.5rem 0;
+    }
+
     @include desktop {
       margin: 2rem 0;
     }
@@ -389,7 +442,7 @@ footer a {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
     }
   }
 
@@ -397,11 +450,11 @@ footer a {
     @include tablet {
       display: flex;
       justify-content: space-between;
-      padding: 1rem 0;
+      padding: 0 0 1rem;
     }
 
     @include desktop {
-      width: 70%;
+      width: 80%;
     }
   }
 
@@ -420,15 +473,12 @@ footer a {
     }
 
     img {
-      @include desktop {
-        height: 25px;
-        width: auto;
-      }
+      height: 1.5625rem;
     }
   }
 
   &__secondary-title {
-    font-weight: bold;
+    font-weight: 600;
     margin: 1rem 0;
   }
 
@@ -455,11 +505,8 @@ footer a {
   }
 
   &__logo-below {
-    width: 100%;
-    height: 100%;
-    max-height: 1.25rem;
-    max-width: 7.5rem;
-    margin-top: 1.5rem;
+    width: 9.375rem;
+    margin-top: 3.5rem;
 
     @include tablet {
       display: none;
@@ -467,6 +514,8 @@ footer a {
   }
 
   &__copyright {
+    font-size: 0.875rem;
+
     @include tablet {
       padding-top: 1rem;
     }

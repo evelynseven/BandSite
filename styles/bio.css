@@ -15,11 +15,10 @@
 }
 * {
   box-sizing: border-box;
-  font-family: "AvenirNext", sans-serif;
-  font-weight: 400;
 }
 
 body {
+  font-family: "AvenirNext", sans-serif;
   margin: 0;
   width: 100%;
   color: #323232;
@@ -28,8 +27,8 @@ body img {
   width: 100%;
 }
 body p {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  font-size: 1.1rem;
+  line-height: 1.75rem;
 }
 @media screen and (min-width: 768px) {
   body p {
@@ -52,8 +51,12 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  h1 {
+    font-size: 4rem;
   }
 }
 
@@ -65,8 +68,13 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 2.25rem;
+    font-size: 3rem;
     line-height: 2.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
@@ -85,22 +93,22 @@ h3 {
 
 footer p,
 footer a {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   footer p,
   footer a {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1.15rem;
+    line-height: 1.75rem;
   }
 }
 @media screen and (min-width: 1280px) {
   footer p,
   footer a {
-    font-size: 0.975rem;
-    line-height: 1.6rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -121,7 +129,7 @@ footer a {
 .header {
   background-color: #323232;
   width: 100%;
-  height: 5rem;
+  height: 6.25rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -136,23 +144,27 @@ footer a {
 @media screen and (min-width: 1280px) {
   .header {
     padding: 0 8rem;
-    height: 6rem;
   }
 }
 .header__logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0 0 0;
   height: 60%;
 }
+@media screen and (min-width: 768px) {
+  .header__logo-container {
+    padding: 0;
+  }
+}
 .header__logo-container img {
-  width: 100%;
-  height: 100%;
-  max-height: 1.25rem;
-  max-width: 7.5rem;
+  width: 9.375rem;
+  max-height: 2.5rem;
+  max-width: 15rem;
 }
 .header ul {
-  padding: 0;
+  padding: 0.2rem 0;
   margin: 0;
   list-style: none;
   display: flex;
@@ -165,6 +177,7 @@ footer a {
 }
 .header ul li {
   width: 50vw;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .header ul li {
@@ -175,30 +188,32 @@ footer a {
 .header ul li a {
   color: #e1e1e1;
   text-decoration: none;
-  padding: 0 0 0.5rem 0;
   display: inline-block;
   width: 100%;
+  font-size: 1.1rem;
+}
+.header ul li .active {
+  color: #ffffff;
+  font-weight: 600;
+}
+.header ul li .active::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 4px solid #ffffff;
 }
 @media screen and (min-width: 768px) {
-  .header ul li a {
-    padding: 1.7rem 0;
-    height: 100%;
+  .header ul li .active::after {
+    top: 2.25rem;
   }
-}
-@media screen and (min-width: 1280px) {
-  .header ul li a {
-    padding: 2.2rem 0;
-  }
-}
-.header ul .active {
-  color: #ffffff;
-  font-weight: bold;
-  border-bottom: 3px solid #ffffff;
 }
 
 .hero {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 6.25rem;
   height: 40vh;
   min-height: 100px;
   background-image: url("../assets/images/hero-bio.jpg");
@@ -212,7 +227,7 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 80vh;
+    height: 85vh;
     padding-left: 2.25rem;
   }
 }
@@ -239,29 +254,34 @@ footer a {
 .bio {
   box-sizing: border-box;
   width: 100%;
-  padding: 1.5rem 1rem 0;
+  padding: 0 1rem;
 }
 @media screen and (min-width: 768px) {
   .bio {
-    padding: 2.5rem;
+    padding: 0 2.5rem 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .bio {
-    padding: 3.5rem 8rem;
+    padding: 0 8rem 2rem;
   }
 }
 .bio h2 {
-  margin: 0 0 1rem 0;
+  margin: 1.5rem 0 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .bio h2 {
+    margin: 4rem 0 2.5rem 0;
+  }
 }
 @media screen and (min-width: 768px) {
   .bio__content {
-    padding: 1rem 3.5rem;
+    padding: 0 5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .bio__content {
-    padding: 1.5rem 7rem;
+    padding: 0 6.5rem;
   }
 }
 .bio__content img {
@@ -289,30 +309,51 @@ footer a {
   }
 }
 .bio__quote {
-  margin-top: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .bio__quote {
+    font-size: 1.85rem;
+    line-height: 2.5rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .bio__quote {
+    font-size: 1.55rem;
     width: 80%;
   }
 }
 .bio__quote-sign {
+  font-size: 1.2rem;
   font-weight: 600;
+  margin: 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .bio__quote-sign {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .bio__quote-sign {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
+}
+.bio__article-title {
+  margin: 2rem 0 1rem;
+  font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
   .bio__article-title {
     margin: 3rem 0 1.5rem;
+    font-size: 1.85rem;
+    line-height: 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bio__article-title {
+    font-weight: 500;
   }
 }
 @media screen and (min-width: 768px) {
@@ -324,6 +365,14 @@ footer a {
 @media screen and (min-width: 768px) {
   .bio__article-content p {
     width: 48%;
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bio__article-content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -345,17 +394,24 @@ footer a {
 .gallery h2 {
   margin: 0 0 1rem 0;
 }
+@media screen and (min-width: 768px) {
+  .gallery h2 {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+}
 .gallery img {
   margin: 0.3125rem 0;
 }
 @media screen and (min-width: 768px) {
   .gallery img {
-    width: 32%;
-    margin: 0.5rem 0;
+    width: 31%;
+    margin: 1rem 0;
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery img {
+    width: 32%;
     margin: 0.7rem 0;
   }
 }
@@ -371,16 +427,21 @@ footer a {
   width: 100%;
   background-color: #323232;
   color: #ffffff;
-  padding: 2rem 1rem 2rem;
+  padding: 2rem 1rem 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 2.25rem;
+    padding: 2.25rem 1rem 3rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .footer {
-    padding: 2.5rem 8rem;
+    padding: 2.5rem 8rem 3rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer p {
+    margin: 1.5rem 0;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -394,19 +455,19 @@ footer a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
 }
 @media screen and (min-width: 768px) {
   .footer__second-row {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0 0 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .footer__second-row {
-    width: 70%;
+    width: 80%;
   }
 }
 .footer__icon-container {
@@ -425,14 +486,11 @@ footer a {
     padding: 0;
   }
 }
-@media screen and (min-width: 1280px) {
-  .footer__icon-container img {
-    height: 25px;
-    width: auto;
-  }
+.footer__icon-container img {
+  height: 1.5625rem;
 }
 .footer__secondary-title {
-  font-weight: bold;
+  font-weight: 600;
   margin: 1rem 0;
 }
 .footer a {
@@ -457,16 +515,16 @@ footer a {
   }
 }
 .footer__logo-below {
-  width: 100%;
-  height: 100%;
-  max-height: 1.25rem;
-  max-width: 7.5rem;
-  margin-top: 1.5rem;
+  width: 9.375rem;
+  margin-top: 3.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__logo-below {
     display: none;
   }
+}
+.footer__copyright {
+  font-size: 0.875rem;
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {
