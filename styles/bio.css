@@ -51,12 +51,12 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 5rem;
+    font-size: 5.05rem;
   }
 }
 @media screen and (min-width: 1280px) {
   h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 }
 
@@ -207,7 +207,7 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .header ul li .active::after {
-    top: 2.19rem;
+    top: 2.25rem;
   }
 }
 
@@ -396,7 +396,6 @@ footer a {
 }
 @media screen and (min-width: 768px) {
   .gallery h2 {
-    font-size: 3rem;
     margin: 2rem 0;
   }
 }
