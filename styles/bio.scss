@@ -56,11 +56,11 @@ h1 {
   margin: 0;
 
   @include tablet {
-    font-size: 5rem;
+    font-size: 5.05rem;
   }
 
   @include desktop {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 }
 
@@ -192,14 +192,14 @@ footer a {
         &::after {
           content: "";
           position: absolute;
-          top: 0.85rem;
+          top: 0.7rem;
           left: 0;
           height: 100%;
           width: 100%;
           border-bottom: 4px solid $primary-color-white;
 
           @include tablet {
-            top: 2.25rem;
+            top: 2.188rem;
           }
         }
       }
@@ -384,7 +384,6 @@ footer a {
     margin: 0 0 1rem 0;
 
     @include tablet {
-      font-size: 3rem;
       margin: 2rem 0;
     }
   }
