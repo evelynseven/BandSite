@@ -215,6 +215,7 @@ footer a {
   }
 
   @include desktop {
+    height: 50vw;
     padding: 0 8rem;
   }
 
@@ -400,7 +401,7 @@ footer a {
   padding: 2rem 1rem 1rem;
 
   @include tablet {
-    padding: 1.5rem 2.25rem;
+    padding: 0.5rem 2.25rem 1.5rem;
   }
 
   @include desktop {
