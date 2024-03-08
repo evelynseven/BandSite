@@ -34,17 +34,12 @@ body {
   }
 
   p {
-    font-size: 1.1rem;
-    line-height: 1.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
 
     @include tablet {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       line-height: 1.375rem;
-    }
-
-    @include desktop {
-      font-size: 0.975rem;
-      line-height: 1.6rem;
     }
   }
 }
@@ -56,11 +51,8 @@ h1 {
   margin: 0;
 
   @include tablet {
-    font-size: 5.05rem;
-  }
-
-  @include desktop {
-    font-size: 4.2rem;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
 
@@ -71,12 +63,8 @@ h2 {
   margin: 0;
 
   @include tablet {
-    font-size: 3rem;
+    font-size: 2.25rem;
     line-height: 2.75rem;
-  }
-
-  @include tablet {
-    font-size: 2.5rem;
   }
 }
 
@@ -94,18 +82,12 @@ h3 {
 
 footer p,
 footer a {
-  font-size: 1rem;
-  line-height: 1.75rem;
-  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 
   @include tablet {
-    font-size: 1.15rem;
-    line-height: 1.75rem;
-  }
-
-  @include desktop {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -113,7 +95,7 @@ footer a {
 .button {
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
 
   @include tablet {
     font-size: 0.75rem;
@@ -124,7 +106,7 @@ footer a {
 .header {
   background-color: $primary-color-black;
   width: 100%;
-  height: 6.25rem;
+  height: 4.75rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -136,6 +118,7 @@ footer a {
   }
 
   @include desktop {
+    height: 5.2rem;
     padding: 0 8rem;
   }
 
@@ -143,22 +126,20 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0 0 0;
+    padding: 0.8rem 0 0 0;
     height: 60%;
 
     @include tablet {
-      padding: 0;
+      padding-top: 0.3rem;
     }
 
     img {
-      width: 9.375rem;
-      max-height: 2.5rem;
-      max-width: 15rem;
+      width: 7.1875rem;
     }
   }
 
   ul {
-    padding: 0.2rem 0;
+    padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
@@ -182,7 +163,11 @@ footer a {
         text-decoration: none;
         display: inline-block;
         width: 100%;
-        font-size: 1.1rem;
+        font-size: 0.8125rem;
+
+        @include tablet {
+          font-size: 0.9rem;
+        }
       }
 
       .active {
@@ -192,14 +177,18 @@ footer a {
         &::after {
           content: "";
           position: absolute;
-          top: 0.7rem;
+          top: 0.48rem;
           left: 0;
           height: 100%;
           width: 100%;
-          border-bottom: 4px solid $primary-color-white;
+          border-bottom: 3px solid $primary-color-white;
 
           @include tablet {
-            top: 2.25rem;
+            top: 1.57rem;
+          }
+
+          @include desktop {
+            top: 1.78rem;
           }
         }
       }
@@ -209,8 +198,8 @@ footer a {
 
 .hero {
   width: 100%;
-  margin-top: 6.25rem;
-  height: 40vh;
+  margin-top: 4.75rem;
+  height: 58vw;
   min-height: 100px;
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
@@ -222,12 +211,10 @@ footer a {
   padding: 1rem;
 
   @include tablet {
-    height: 85vh;
     padding-left: 2.25rem;
   }
 
   @include desktop {
-    height: 90vh;
     padding: 0 8rem;
   }
 
@@ -253,7 +240,7 @@ footer a {
   padding: 0 1rem;
 
   @include tablet {
-    padding: 0 2.5rem 1.5rem;
+    padding: 0 2.25rem 1.5rem;
   }
 
   @include desktop {
@@ -270,11 +257,11 @@ footer a {
 
   &__content {
     @include tablet {
-      padding: 0 5rem;
+      padding: 0 3.5rem;
     }
 
     @include desktop {
-      padding: 0 6.5rem;
+      padding: 0 5.5rem;
     }
 
     img {
@@ -286,63 +273,57 @@ footer a {
   }
 
   &__img-container {
+    height: 50vw;
+    background-image: url("../assets/images/band.jpg");
+    background-size: cover;
+    background-position: bottom;
+
     @include tablet {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: auto;
-      margin-bottom: 2rem;
+      height: 40vw;
     }
 
     @include desktop {
-      height: 65vh;
-      display: flex;
-      justify-content: center;
+      height: 35vw;
     }
   }
 
   &__quote {
     margin-top: $padding-between-components-m;
-    font-size: 1.2rem;
-    line-height: 2rem;
 
     @include tablet {
-      font-size: 1.85rem;
-      line-height: 2.5rem;
+      margin-top: $padding-between-components;
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
 
     @include desktop {
-      font-size: 1.55rem;
       width: 80%;
     }
   }
 
   &__quote-sign {
-    font-size: 1.2rem;
     font-weight: 600;
-    margin: $padding-between-components-m 0;
+    margin: 0.6rem 0;
 
     @include tablet {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
 
     @include desktop {
-      font-size: 1.2rem;
+      margin-top: 1rem;
     }
   }
 
   &__article-title {
-    margin: 2rem 0 $padding-between-components-m;
-    font-size: 1.2rem;
+    margin: 1.5rem 0 $padding-between-components-m;
+    font-weight: 500;
 
     @include tablet {
       margin: 3rem 0 1.5rem;
-      font-size: 1.85rem;
-      line-height: 2.5rem;
     }
 
     @include desktop {
-      font-weight: 500;
+      margin-bottom: 0.8rem;
     }
   }
 
@@ -354,14 +335,11 @@ footer a {
 
     p {
       @include tablet {
-        width: 48%;
-        font-size: 1.15rem;
-        line-height: 1.75rem;
+        width: 46%;
       }
 
       @include desktop {
-        font-size: 1rem;
-        line-height: 1.5rem;
+        width: 48%;
       }
     }
   }
@@ -373,7 +351,7 @@ footer a {
   background-color: $secondary-color-alabaster;
 
   @include tablet {
-    padding: 2.5rem;
+    padding: $padding-before-headline 2.25rem 2rem;
   }
 
   @include desktop {
@@ -381,10 +359,14 @@ footer a {
   }
 
   h2 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.6rem 0;
 
     @include tablet {
-      margin: 2rem 0;
+      margin: 0 0 1rem;
+    }
+
+    @include desktop {
+      margin: 0 0 2rem;
     }
   }
 
@@ -393,12 +375,11 @@ footer a {
 
     @include tablet {
       width: 31%;
-      margin: 1rem 0;
+      margin: 0.7rem 0;
     }
 
     @include desktop {
       width: 32%;
-      margin: 0.7rem 0;
     }
   }
 
@@ -407,6 +388,7 @@ footer a {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      align-content: space-between;
     }
   }
 }
@@ -418,11 +400,11 @@ footer a {
   padding: 2rem 1rem 1rem;
 
   @include tablet {
-    padding: 2.25rem 1rem 3rem;
+    padding: 1.5rem 2.25rem;
   }
 
   @include desktop {
-    padding: 2.5rem 8rem 3rem;
+    padding: 2rem 8rem;
   }
 
   p {
@@ -453,7 +435,7 @@ footer a {
     }
 
     @include desktop {
-      width: 80%;
+      width: 75%;
     }
   }
 
@@ -489,10 +471,7 @@ footer a {
   }
 
   &__logo-above {
-    width: 100%;
-    height: 100%;
-    max-height: 1.25rem;
-    max-width: 7.5rem;
+    width: 7.1875rem;
     margin-top: 1.5rem;
     display: none;
 
@@ -504,8 +483,8 @@ footer a {
   }
 
   &__logo-below {
-    width: 9.375rem;
-    margin-top: 3.5rem;
+    width: 7.1875rem;
+    margin-top: 3rem;
 
     @include tablet {
       display: none;
@@ -513,10 +492,11 @@ footer a {
   }
 
   &__copyright {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
 
     @include tablet {
-      padding-top: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
     }
   }
 }
