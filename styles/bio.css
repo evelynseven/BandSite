@@ -466,6 +466,19 @@ footer a {
   }
 }
 @media screen and (min-width: 768px) {
+  .footer__first-row-left {
+    width: 53%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__first-row-left {
+    width: 39%;
+  }
+}
+@media screen and (min-width: 768px) {
   .footer__second-row {
     display: flex;
     justify-content: space-between;
@@ -482,11 +495,6 @@ footer a {
   justify-content: space-between;
   padding: 1rem 0;
   width: 7.5rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__icon-container {
-    margin-left: 3rem;
-  }
 }
 @media screen and (min-width: 1280px) {
   .footer__icon-container {

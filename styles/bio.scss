@@ -453,6 +453,19 @@ footer a {
       align-items: center;
       padding: 1.5rem 0;
     }
+
+    &-left {
+      @include tablet {
+        width: 53%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @include desktop {
+        width: 39%;
+      }
+    }
   }
 
   &__second-row {
@@ -472,10 +485,6 @@ footer a {
     justify-content: space-between;
     padding: 1rem 0;
     width: 7.5rem;
-
-    @include tablet {
-      margin-left: 3rem;
-    }
 
     @include desktop {
       padding: 0;
