@@ -1,0 +1,352 @@
+@font-face {
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTPro.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTProDemi.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: AvenirNext;
+  src: url("../assets/fonts/AvenirNextLTProBold.ttf");
+  font-weight: 700;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "AvenirNext", sans-serif;
+  margin: 0;
+  width: 100%;
+  color: #323232;
+}
+body img {
+  width: 100%;
+}
+body p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  body p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+footer p,
+footer a {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  footer p,
+  footer a {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.label {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.25rem 0;
+  color: #afafaf;
+}
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+
+button {
+  font-family: "AvenirNext", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75rem;
+  min-height: 2.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  background-color: #323232;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #323232;
+  width: 100%;
+  height: 4.75rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+    padding-left: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    height: 5.2rem;
+    padding: 0 8rem;
+  }
+}
+.header__logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 0 0 0;
+  height: 60%;
+}
+@media screen and (min-width: 768px) {
+  .header__logo-container {
+    padding-top: 0.3rem;
+  }
+}
+.header__logo-container img {
+  width: 7.1875rem;
+}
+.header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .header ul {
+    margin-left: 2rem;
+  }
+}
+.header ul li {
+  width: 50vw;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .header ul li {
+    width: auto;
+    margin: 0 2rem;
+  }
+}
+.header ul li a {
+  color: #e1e1e1;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  font-size: 0.8125rem;
+}
+@media screen and (min-width: 768px) {
+  .header ul li a {
+    font-size: 0.9rem;
+  }
+}
+.header ul li a:hover {
+  color: #ffffff;
+}
+.header ul li a:hover::after {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .header ul li a:hover::after {
+    top: 1.57rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header ul li a:hover::after {
+    top: 1.78rem;
+  }
+}
+.header ul li .active {
+  color: #ffffff;
+  font-weight: 600;
+}
+.header ul li .active::after {
+  content: "";
+  position: absolute;
+  top: 0.48rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .header ul li .active::after {
+    top: 1.57rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header ul li .active::after {
+    top: 1.78rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  padding: 2rem 1rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 0.5rem 2.25rem 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 2rem 8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer p {
+    margin: 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer p {
+    margin: 2rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__first-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__first-row-left {
+    width: 53%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__first-row-left {
+    width: 39%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__second-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__second-row {
+    width: 75%;
+  }
+}
+.footer__icon-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  width: 7.5rem;
+}
+@media screen and (min-width: 1280px) {
+  .footer__icon-container {
+    padding: 0;
+  }
+}
+.footer__icon-container img {
+  height: 1.5625rem;
+}
+.footer__secondary-title {
+  font-weight: 600;
+  margin: 1rem 0;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.footer__logo-above {
+  width: 7.1875rem;
+  margin-top: 1.5rem;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo-above {
+    display: inline-block;
+    margin: 0;
+    margin-left: auto;
+  }
+}
+.footer__logo-below {
+  width: 7.1875rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo-below {
+    display: none;
+  }
+}
+.footer__copyright {
+  font-size: 0.7rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+  }
+}/*# sourceMappingURL=global.css.map */

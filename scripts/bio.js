@@ -1,3 +1,4 @@
+//get parent container
 const formEl = document.querySelector(".comments__form");
 
 //add comments container

@@ -1,0 +1,112 @@
+.hero {
+  width: 100%;
+  margin-top: 4.75rem;
+  height: 58vw;
+  min-height: 100px;
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ffffff;
+  padding: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-left: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 50vw;
+    padding: 0 8rem;
+  }
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #323232;
+  opacity: 0.5;
+  z-index: 1;
+}
+.hero h1,
+.hero p {
+  z-index: 2;
+}
+
+.shows {
+  width: 100%;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .shows {
+    padding: 2.25rem 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    padding: 2rem 8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.shows h2 {
+  margin: 1rem 1rem 0;
+}
+.shows__shows-container {
+  width: 75%;
+}
+@media screen and (min-width: 768px) {
+  .shows__labels {
+    padding: 1rem 0 0 1rem;
+  }
+}
+.shows__label-container {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__label-container {
+    width: 22.5vw;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__label-container {
+    width: 14.7vw;
+  }
+}
+.shows__show-box {
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 768px) {
+  .shows__data-container {
+    width: 23vw;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__data-container {
+    width: 15vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__mobile-label {
+    display: none;
+  }
+}
+.shows__show-date {
+  font-weight: 600;
+}
+.shows__show-data {
+  margin: 0.25rem 0 0.8rem;
+}
+.shows__button {
+  margin-top: 0.5rem;
+  width: 9.6875rem;
+}/*# sourceMappingURL=shows.css.map */

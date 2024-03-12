@@ -1,0 +1,120 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.hero {
+  width: 100%;
+  margin-top: 4.75rem;
+  height: 58vw;
+  min-height: 100px;
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: $primary-color-white;
+  padding: 1rem;
+
+  @include tablet {
+    padding-left: 2.25rem;
+  }
+
+  @include desktop {
+    height: 50vw;
+    padding: 0 8rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color-black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  h1,
+  p {
+    z-index: 2;
+  }
+}
+
+.shows {
+  width: 100%;
+  padding: 1rem 0;
+
+  @include tablet {
+    padding: 2.25rem 1.5rem;
+  }
+
+  @include desktop {
+    padding: 2rem 8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2 {
+    margin: 1rem 1rem 0;
+  }
+
+  &__shows-container {
+    width: 75%;
+  }
+
+  &__labels {
+    @include tablet {
+      padding: 1rem 0 0 1rem;
+    }
+  }
+
+  &__label-container {
+    display: none;
+
+    @include tablet {
+      width: 22.5vw;
+      display: inline-block;
+    }
+
+    @include desktop {
+      width: 14.7vw;
+    }
+  }
+
+  &__show-box {
+    padding: 1rem;
+    border-bottom: 1px solid $secondary-color-mercury;
+  }
+
+  &__data-container {
+    @include tablet {
+      width: 23vw;
+      display: inline-block;
+    }
+
+    @include desktop {
+      width: 15vw;
+    }
+  }
+
+  &__mobile-label {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__show-date {
+    font-weight: 600;
+  }
+
+  &__show-data {
+    margin: 0.25rem 0 0.8rem;
+  }
+
+  &__button {
+    margin-top: 0.5rem;
+    width: 9.6875rem;
+  }
+}
