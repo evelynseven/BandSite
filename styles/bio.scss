@@ -236,17 +236,23 @@
     justify-content: space-between;
   }
 
-  &__current-user-img {
+  &__img-container {
     margin-top: 1.75rem;
     width: 2.25rem;
     height: 2.25rem;
+    overflow: hidden;
     border-radius: 50%;
-    background-size: cover;
-    background-image: url("../assets/images/Mohan-muruge.jpg");
 
     @include tablet {
       width: 3rem;
       height: 3rem;
+    }
+
+    img {
+      max-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      object-position: 20%;
     }
   }
 
@@ -255,6 +261,7 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
+    background-size: cover;
     background-color: $secondary-color-mercury;
 
     @include tablet {
@@ -297,6 +304,10 @@
       border-color: $primary-color-black;
     }
 
+    &--error {
+      border-color: #d22d2d;
+    }
+
     @include tablet {
       min-height: 3rem;
       font-size: 0.875rem;
@@ -325,6 +336,10 @@
     &:focus {
       outline: none;
       border-color: $primary-color-black;
+    }
+
+    &--error {
+      border-color: #d22d2d;
     }
 
     @include tablet {
