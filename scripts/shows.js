@@ -108,3 +108,15 @@ for (const iterator of shows) {
   buttonEl.classList.add("shows__button");
   outerContainerEl.appendChild(buttonEl);
 }
+
+//get the showbox array, and register click events
+let showboxs = document.querySelectorAll(".shows__show-box");
+
+for (let iterator of showboxs) {
+  iterator.addEventListener("click", () => {
+    for (let showbox of showboxs) {
+      showbox.classList.remove("shows__show-box--selected");
+    }
+    iterator.classList.add("shows__show-box--selected");
+  });
+}
