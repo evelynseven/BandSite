@@ -1,7 +1,7 @@
 .hero {
   width: 100%;
   margin-top: 4.75rem;
-  height: 58vw;
+  height: 88vw;
   min-height: 100px;
   background-image: url("../assets/images/hero-shows.jpg");
   background-size: cover;
@@ -15,6 +15,7 @@
 @media screen and (min-width: 768px) {
   .hero {
     padding-left: 2.25rem;
+    height: 65vw;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -34,9 +35,43 @@
   opacity: 0.5;
   z-index: 1;
 }
-.hero h1,
-.hero p {
+.hero__content {
   z-index: 2;
+  margin: auto 0;
+}
+.hero p {
+  width: 100%;
+}
+.hero h1 {
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .hero h1 {
+    display: inline-block;
+    width: auto;
+    margin-right: 7vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+.hero__song {
+  width: 100%;
+  margin: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .hero__song {
+    margin: 2rem 0;
+    width: 25.625rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__song {
+    display: inline-block;
+  }
 }
 
 .shows {
@@ -76,6 +111,14 @@
   width: 100%;
   padding: 1rem;
   border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 1280px) {
+  .shows__show-box {
+    cursor: pointer;
+  }
+  .shows__show-box:hover {
+    background-color: #fafafa;
+  }
 }
 @media screen and (min-width: 768px) {
   .shows__labels {

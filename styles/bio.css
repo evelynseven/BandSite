@@ -320,20 +320,10 @@
   }
 }
 .comments__name-input::-moz-placeholder {
-  position: absolute;
-  top: 0.75rem;
+  color: #323232;
 }
 .comments__name-input::placeholder {
-  position: absolute;
-  top: 0.75rem;
-}
-@media screen and (min-width: 768px) {
-  .comments__name-input::-moz-placeholder {
-    top: 1rem;
-  }
-  .comments__name-input::placeholder {
-    top: 1rem;
-  }
+  color: #323232;
 }
 .comments__comment {
   height: 100px;
@@ -344,6 +334,13 @@
   font-family: "AvenirNext";
   font-size: 0.8125rem;
   background-color: #fafafa;
+  resize: none;
+}
+.comments__comment::-moz-placeholder {
+  color: #323232;
+}
+.comments__comment::placeholder {
+  color: #323232;
 }
 .comments__comment:focus {
   outline: none;

@@ -314,12 +314,7 @@
     }
 
     &::placeholder {
-      position: absolute;
-      top: 0.75rem;
-
-      @include tablet {
-        top: 1rem;
-      }
+      color: $primary-color-black;
     }
   }
 
@@ -332,6 +327,11 @@
     font-family: "AvenirNext";
     font-size: 0.8125rem;
     background-color: $secondary-color-alabaster;
+    resize: none;
+
+    &::placeholder {
+      color: $primary-color-black;
+    }
 
     &:focus {
       outline: none;
