@@ -282,15 +282,24 @@
     margin-top: 1rem;
   }
 
-  input {
+  &__name-input {
     min-height: 2.25rem;
     width: 100%;
     border-radius: 0.25rem;
     padding: 0.75rem;
     border: 1px solid $secondary-color-mercury;
+    font-family: "AvenirNext";
+    font-size: 0.8125rem;
+    background-color: $secondary-color-alabaster;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color-black;
+    }
 
     @include tablet {
       min-height: 3rem;
+      font-size: 0.875rem;
     }
 
     &::placeholder {
@@ -305,6 +314,22 @@
 
   &__comment {
     height: 100px;
+    width: 100%;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid $secondary-color-mercury;
+    font-family: "AvenirNext";
+    font-size: 0.8125rem;
+    background-color: $secondary-color-alabaster;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color-black;
+    }
+
+    @include tablet {
+      font-size: 0.875rem;
+    }
   }
 
   &__button-box {

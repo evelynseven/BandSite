@@ -288,36 +288,60 @@
 .comments__form-input-below {
   margin-top: 1rem;
 }
-.comments input {
+.comments__name-input {
   min-height: 2.25rem;
   width: 100%;
   border-radius: 0.25rem;
   padding: 0.75rem;
   border: 1px solid #e1e1e1;
+  font-family: "AvenirNext";
+  font-size: 0.8125rem;
+  background-color: #fafafa;
+}
+.comments__name-input:focus {
+  outline: none;
+  border-color: #323232;
 }
 @media screen and (min-width: 768px) {
-  .comments input {
+  .comments__name-input {
     min-height: 3rem;
+    font-size: 0.875rem;
   }
 }
-.comments input::-moz-placeholder {
+.comments__name-input::-moz-placeholder {
   position: absolute;
   top: 0.75rem;
 }
-.comments input::placeholder {
+.comments__name-input::placeholder {
   position: absolute;
   top: 0.75rem;
 }
 @media screen and (min-width: 768px) {
-  .comments input::-moz-placeholder {
+  .comments__name-input::-moz-placeholder {
     top: 1rem;
   }
-  .comments input::placeholder {
+  .comments__name-input::placeholder {
     top: 1rem;
   }
 }
 .comments__comment {
   height: 100px;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid #e1e1e1;
+  font-family: "AvenirNext";
+  font-size: 0.8125rem;
+  background-color: #fafafa;
+}
+.comments__comment:focus {
+  outline: none;
+  border-color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .comments__comment {
+    font-size: 0.875rem;
+  }
 }
 .comments__button-box {
   display: flex;

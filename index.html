@@ -87,8 +87,9 @@
             <div class="comments__current-user-img"></div>
             <div class="comments__form-input-box">
               <div>
-                <p class="label">name</p>
+                <label for="userName">name</label>
                 <input
+                  class="comments__name-input"
                   type="text"
                   name="userName"
                   id="userName"
@@ -96,14 +97,15 @@
                 />
               </div>
               <div class="comments__form-input-below">
-                <p class="label">comment</p>
-                <input
+                <label for="userComment">comment</label>
+                <textarea
                   class="comments__comment"
-                  type="text"
                   name="userComment"
                   id="userComment"
+                  cols="30"
+                  rows="10"
                   placeholder="Add a new comment"
-                />
+                ></textarea>
               </div>
               <div class="comments__button-box">
                 <button class="comments__button">comment</button>

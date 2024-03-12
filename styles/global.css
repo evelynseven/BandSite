@@ -79,26 +79,27 @@ h3 {
 footer p,
 footer a {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
+  line-height: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   footer p,
   footer a {
     font-size: 0.875rem;
-    line-height: 1.25rem;
+    line-height: 1.5rem;
   }
 }
 
-.label {
+label {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
   margin: 0.25rem 0;
+  display: inline-block;
   color: #afafaf;
 }
 @media screen and (min-width: 768px) {
-  .label {
+  label {
     font-size: 0.75rem;
     line-height: 1.25rem;
   }

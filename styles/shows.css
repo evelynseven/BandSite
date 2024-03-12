@@ -58,31 +58,8 @@
 .shows h2 {
   margin: 1rem 1rem 0;
 }
-.shows__shows-container {
-  width: 75%;
-}
-@media screen and (min-width: 768px) {
-  .shows__labels {
-    padding: 1rem 0 0 1rem;
-  }
-}
-.shows__label-container {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .shows__label-container {
-    width: 22.5vw;
-    display: inline-block;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .shows__label-container {
-    width: 14.7vw;
-  }
-}
-.shows__show-box {
-  padding: 1rem;
-  border-bottom: 1px solid #e1e1e1;
+.shows__outer-container {
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .shows__data-container {
@@ -93,6 +70,35 @@
 @media screen and (min-width: 1280px) {
   .shows__data-container {
     width: 15vw;
+  }
+}
+.shows__show-box {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media screen and (min-width: 768px) {
+  .shows__labels {
+    margin: 1.5rem 0 0 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__labels {
+    margin: 2rem 0 0 1rem;
+  }
+}
+.shows__label-container {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__label-container {
+    width: 22.35vw;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__label-container {
+    width: 14.7vw;
   }
 }
 @media screen and (min-width: 768px) {
@@ -107,6 +113,11 @@
   margin: 0.25rem 0 0.8rem;
 }
 .shows__button {
-  margin-top: 0.5rem;
-  width: 9.6875rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .shows__button {
+    margin-top: 0.5rem;
+    width: 9.6875rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

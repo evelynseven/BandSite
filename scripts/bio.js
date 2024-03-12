@@ -32,7 +32,8 @@ let divideLineEl = document.createElement("div");
 divideLineEl.classList.add("comments__divide-line");
 commentsContainerEl.appendChild(divideLineEl);
 
-//populate the comments
+//create the function that populates the comments
+
 for (let iterator of comments) {
   //create the comment box
   let commentBoxEl = document.createElement("div");

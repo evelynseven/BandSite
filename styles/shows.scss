@@ -60,32 +60,8 @@
     margin: 1rem 1rem 0;
   }
 
-  &__shows-container {
-    width: 75%;
-  }
-
-  &__labels {
-    @include tablet {
-      padding: 1rem 0 0 1rem;
-    }
-  }
-
-  &__label-container {
-    display: none;
-
-    @include tablet {
-      width: 22.5vw;
-      display: inline-block;
-    }
-
-    @include desktop {
-      width: 14.7vw;
-    }
-  }
-
-  &__show-box {
-    padding: 1rem;
-    border-bottom: 1px solid $secondary-color-mercury;
+  &__outer-container {
+    width: 100%;
   }
 
   &__data-container {
@@ -96,6 +72,35 @@
 
     @include desktop {
       width: 15vw;
+    }
+  }
+
+  &__show-box {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid $secondary-color-mercury;
+  }
+
+  &__labels {
+    @include tablet {
+      margin: 1.5rem 0 0 1rem;
+    }
+
+    @include desktop {
+      margin: 2rem 0 0 1rem;
+    }
+  }
+
+  &__label-container {
+    display: none;
+
+    @include tablet {
+      width: 22.35vw;
+      display: inline-block;
+    }
+
+    @include desktop {
+      width: 14.7vw;
     }
   }
 
@@ -114,7 +119,11 @@
   }
 
   &__button {
-    margin-top: 0.5rem;
-    width: 9.6875rem;
+    width: 100%;
+
+    @include tablet {
+      margin-top: 0.5rem;
+      width: 9.6875rem;
+    }
   }
 }
