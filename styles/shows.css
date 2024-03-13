@@ -20,6 +20,7 @@
 }
 @media screen and (min-width: 1280px) {
   .hero {
+    margin-top: 5.2rem;
     height: 50vw;
     padding: 0 8rem;
   }

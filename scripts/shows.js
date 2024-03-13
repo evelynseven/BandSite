@@ -46,11 +46,6 @@ for (const iterator of shows) {
   showBoxEl.classList.add("shows__show-box");
   showsContainerEl.appendChild(showBoxEl);
 
-  //create the outer container
-  // let outerContainerEl = document.createElement("div");
-  // outerContainerEl.classList.add("shows__outer-container");
-  // showBoxEl.appendChild(outerContainerEl);
-
   //create the data container1
   let dataContainer1El = document.createElement("div");
   dataContainer1El.classList.add("shows__data-container");
@@ -109,9 +104,10 @@ for (const iterator of shows) {
   showBoxEl.appendChild(buttonEl);
 }
 
-//get the showbox array, and register click events
+//get the showbox array
 let showboxs = document.querySelectorAll(".shows__show-box");
 
+//register hover events
 for (let iterator of showboxs) {
   iterator.addEventListener("mouseenter", () => {
     iterator.classList.add("shows__show-box--hovered");
@@ -122,6 +118,7 @@ for (let iterator of showboxs) {
   });
 }
 
+//register click events
 for (let iterator of showboxs) {
   iterator.addEventListener("click", () => {
     for (let showbox of showboxs) {

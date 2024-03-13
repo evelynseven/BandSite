@@ -178,10 +178,15 @@
 
   &__img-container {
     @include tablet {
+      height: 53vw;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: space-between;
+    }
+
+    @include desktop {
+      height: 46vw;
     }
   }
 
@@ -189,8 +194,8 @@
     margin: 0.3125rem 0;
 
     @include tablet {
+      margin: 0;
       width: 31%;
-      margin: 0.7rem 0;
     }
 
     @include desktop {

@@ -184,10 +184,16 @@
 }
 @media screen and (min-width: 768px) {
   .gallery__img-container {
+    height: 53vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__img-container {
+    height: 46vw;
   }
 }
 .gallery img {
@@ -195,8 +201,8 @@
 }
 @media screen and (min-width: 768px) {
   .gallery img {
+    margin: 0;
     width: 31%;
-    margin: 0.7rem 0;
   }
 }
 @media screen and (min-width: 1280px) {

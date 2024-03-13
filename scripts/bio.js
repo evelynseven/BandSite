@@ -1,8 +1,8 @@
 //get the form container
-const formEl = document.querySelector(".comments__form");
+let formEl = document.querySelector(".comments__form");
 
 //add comments container
-const commentsContainerEl = document.createElement("div");
+let commentsContainerEl = document.createElement("div");
 formEl.appendChild(commentsContainerEl);
 
 //define the comments array
@@ -35,6 +35,64 @@ let divideLineEl = document.createElement("div");
 divideLineEl.classList.add("comments__divide-line");
 commentsContainerEl.appendChild(divideLineEl);
 
+//create the dynamic timestamp function
+function dynamicTS(dateString, currentTimestamp) {
+  let dynamicTimestamp;
+
+  let timestamp = new Date(dateString);
+  date = timestamp.getDate();
+  month = timestamp.getMonth() + 1;
+  year = timestamp.getFullYear();
+
+  //get time difference
+  const timeDifference = Math.abs(currentTimestamp - timestamp);
+  const yearsDifference =
+    currentTimestamp.getFullYear() - timestamp.getFullYear();
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const monthsDifference = Math.floor(daysDifference / 30);
+  const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
+  const minutesDifference = Math.floor(
+    (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  //show dynamic timestamp if under 1 years
+  if (daysDifference < 365) {
+    if (daysDifference > 30) {
+      //show only months if under 1 year
+      dynamicTimestamp = `${monthsDifference} months ago`;
+    } else if (daysDifference > 1) {
+      //show only days if under 1 day
+      dynamicTimestamp = `${daysDifference} days ago`;
+    } else {
+      if (minutesDifference > 60) {
+        //show only hours if under 1 day
+        dynamicTimestamp = `${hoursDifference} hours ago`;
+      } else {
+        if (secondsDifference > 60) {
+          //show only minutes if under 1 hour
+          dynamicTimestamp = `${minutesDifference} minutes ago`;
+        } else {
+          //show only seconds if under 1 minute
+          dynamicTimestamp = `${secondsDifference} seconds ago`;
+        }
+      }
+    }
+  } else {
+    //show exact date if over 1 years
+    // format the time
+    if (timestamp.getDate() < 10) {
+      date = "0" + date;
+    }
+    if (timestamp.getMonth() + 1 < 10) {
+      month = "0" + month;
+    }
+    dynamicTimestamp = `${month}/${date}/${year}`;
+  }
+
+  return dynamicTimestamp;
+}
+
 //create the function that populates the comments
 function renderAllComments(comments) {
   for (let iterator of comments) {
@@ -63,7 +121,8 @@ function renderAllComments(comments) {
     let userNameEl = document.createElement("p");
     let timeStampEl = document.createElement("p");
     userNameEl.innerText = iterator.userName;
-    timeStampEl.innerText = iterator.timeStamp;
+    //get the current time, and call the dynamicTS function
+    timeStampEl.innerText = dynamicTS(iterator.timeStamp, new Date());
     userNameEl.classList.add("comments__info-username");
     timeStampEl.classList.add("comments__info-timestamp");
     infoFirstRowEl.appendChild(userNameEl);
@@ -87,7 +146,7 @@ renderAllComments(comments);
 
 let avatar = document.querySelector(".comments__current-user-img");
 
-//register the form submit event
+//register the form with a submit event
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -104,26 +163,19 @@ formEl.addEventListener("submit", (e) => {
   let commentInputEl = e.target.userComment;
 
   if (userName.trim() !== "" && userComment.trim() !== "") {
-    //clear the data
-    commentsContainerEl.innerHTML = "";
-
-    //get comment timestamp
+    //get the timestamp
     let commentTimeStamp = new Date();
-    let day, month;
-    if (commentTimeStamp.getDate() < 10) {
-      day = "0" + commentTimeStamp.getDate();
-    } else {
-      day = commentTimeStamp.getDate();
-    }
-    if (commentTimeStamp.getMonth() + 1 < 10) {
-      month = "0" + (commentTimeStamp.getMonth() + 1);
-    } else {
-      month = commentTimeStamp.getMonth() + 1;
-    }
+    let second, minute, hour, date, month, year;
+    second = commentTimeStamp.getSeconds();
+    minute = commentTimeStamp.getMinutes();
+    hour = commentTimeStamp.getHours();
+    date = commentTimeStamp.getDate();
+    month = commentTimeStamp.getMonth() + 1;
+    year = commentTimeStamp.getFullYear();
 
-    let commentDate = `${month}/${day}/${commentTimeStamp.getFullYear()}`;
+    let commentDate = `${month}/${date}/${year} ${hour}:${minute}:${second}`;
 
-    // update the comments array
+    // construct a new comment object and add to the comments array
     comments.unshift({
       avatar: avatarSrc,
       userName: userName,
@@ -131,10 +183,11 @@ formEl.addEventListener("submit", (e) => {
       timeStamp: commentDate,
     });
 
-    //re-render the data
+    //clear all comments from the page, and re-render the data
+    commentsContainerEl.innerHTML = "";
     renderAllComments(comments);
 
-    //clear the form
+    //clear the input fields after submitting a new comment
     nameInputEl.value = "";
     commentInputEl.value = "";
   } else {
