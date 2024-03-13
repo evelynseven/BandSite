@@ -113,10 +113,20 @@ for (const iterator of shows) {
 let showboxs = document.querySelectorAll(".shows__show-box");
 
 for (let iterator of showboxs) {
+  iterator.addEventListener("mouseenter", () => {
+    iterator.classList.add("shows__show-box--hovered");
+  });
+
+  iterator.addEventListener("mouseleave", () => {
+    iterator.classList.remove("shows__show-box--hovered");
+  });
+}
+
+for (let iterator of showboxs) {
   iterator.addEventListener("click", () => {
     for (let showbox of showboxs) {
       showbox.classList.remove("shows__show-box--selected");
     }
-    iterator.classList.add("shows__show-box--selected");
+    iterator.classList.toggle("shows__show-box--selected");
   });
 }
