@@ -131,8 +131,6 @@
 @media screen and (min-width: 1280px) {
   .shows__show-box {
     cursor: pointer;
-    justify-content: flex-end;
-    position: relative;
   }
 }
 .shows__data-container {
@@ -146,14 +144,12 @@
 }
 @media screen and (min-width: 1280px) {
   .shows__date-wrapper {
-    position: absolute;
-    left: 1.125rem;
+    width: 16rem;
   }
 }
 @media screen and (min-width: 768px) {
   .shows__labels {
     margin: 1.5rem 1.125rem 0;
-    width: 71%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,9 +158,6 @@
 @media screen and (min-width: 1280px) {
   .shows__labels {
     margin: 2rem 1.125rem 0;
-    width: 75%;
-    justify-content: flex-end;
-    position: relative;
   }
 }
 .shows__label-container {
@@ -178,9 +171,11 @@
 }
 @media screen and (min-width: 1280px) {
   .shows__date-label {
-    position: absolute;
-    left: 0;
+    width: 16rem;
   }
+}
+.shows__button-placeholder {
+  width: 9.6875rem;
 }
 @media screen and (min-width: 768px) {
   .shows__mobile-label {
