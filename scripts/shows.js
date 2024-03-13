@@ -41,6 +41,7 @@ const shows = [
 
 //populate the shows
 for (const iterator of shows) {
+  let index = 0;
   //create the show box
   let showBoxEl = document.createElement("div");
   showBoxEl.classList.add("shows__show-box");
@@ -49,9 +50,9 @@ for (const iterator of shows) {
   //create the data container1
   let dataContainer1El = document.createElement("div");
   dataContainer1El.classList.add("shows__data-container");
+  dataContainer1El.classList.add("shows__date-wrapper");
   showBoxEl.appendChild(dataContainer1El);
 
-  //create elements
   let dateLabelEl = document.createElement("label");
   dateLabelEl.innerText = "date";
   dateLabelEl.classList.add("label");
@@ -61,7 +62,6 @@ for (const iterator of shows) {
   let dateEl = document.createElement("p");
   dateEl.innerText = iterator.date;
   dateEl.classList.add("shows__show-date");
-  dateEl.classList.add("shows__show-data");
   dataContainer1El.appendChild(dateEl);
 
   //create the data container2
@@ -77,7 +77,6 @@ for (const iterator of shows) {
 
   let venueEl = document.createElement("p");
   venueEl.innerText = iterator.venue;
-  venueEl.classList.add("shows__show-data");
   dataContainer2El.appendChild(venueEl);
 
   //create the data container3
@@ -93,7 +92,6 @@ for (const iterator of shows) {
 
   let locationEl = document.createElement("p");
   locationEl.innerText = iterator.location;
-  locationEl.classList.add("shows__show-data");
   dataContainer3El.appendChild(locationEl);
 
   //create the button
@@ -102,6 +100,8 @@ for (const iterator of shows) {
   buttonEl.classList.add("button");
   buttonEl.classList.add("shows__button");
   showBoxEl.appendChild(buttonEl);
+
+  index++;
 }
 
 //get the showbox array
