@@ -96,6 +96,10 @@
     margin: 1rem 1rem 0;
   }
 
+  p {
+    margin: 0;
+  }
+
   &__show-box {
     width: 100%;
     padding: 1rem;
@@ -110,7 +114,7 @@
     }
 
     @include tablet {
-      padding: 1rem 1.125rem;
+      padding: 1.5rem 1.125rem;
     }
 
     @include desktop {
@@ -118,12 +122,11 @@
     }
   }
 
-  &__outer-container {
-    width: 100%;
-  }
-
   &__data-container {
+    margin: 0 0 0.8rem 0;
+
     @include tablet {
+      margin: 0;
       width: 22vw;
       display: inline-block;
     }
@@ -164,7 +167,6 @@
     width: 100%;
 
     @include tablet {
-      margin-top: 0.5rem;
       width: 9.6875rem;
     }
   }

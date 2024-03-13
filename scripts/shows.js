@@ -47,14 +47,14 @@ for (const iterator of shows) {
   showsContainerEl.appendChild(showBoxEl);
 
   //create the outer container
-  let outerContainerEl = document.createElement("div");
-  outerContainerEl.classList.add("shows__outer-container");
-  showBoxEl.appendChild(outerContainerEl);
+  // let outerContainerEl = document.createElement("div");
+  // outerContainerEl.classList.add("shows__outer-container");
+  // showBoxEl.appendChild(outerContainerEl);
 
-  //create the inner container1
+  //create the data container1
   let dataContainer1El = document.createElement("div");
   dataContainer1El.classList.add("shows__data-container");
-  outerContainerEl.appendChild(dataContainer1El);
+  showBoxEl.appendChild(dataContainer1El);
 
   //create elements
   let dateLabelEl = document.createElement("label");
@@ -69,10 +69,10 @@ for (const iterator of shows) {
   dateEl.classList.add("shows__show-data");
   dataContainer1El.appendChild(dateEl);
 
-  //create the inner container2
+  //create the data container2
   let dataContainer2El = document.createElement("div");
   dataContainer2El.classList.add("shows__data-container");
-  outerContainerEl.appendChild(dataContainer2El);
+  showBoxEl.appendChild(dataContainer2El);
 
   let venueLabelEl = document.createElement("label");
   venueLabelEl.innerText = "venue";
@@ -85,10 +85,10 @@ for (const iterator of shows) {
   venueEl.classList.add("shows__show-data");
   dataContainer2El.appendChild(venueEl);
 
-  //create the inner container3
+  //create the data container3
   let dataContainer3El = document.createElement("div");
   dataContainer3El.classList.add("shows__data-container");
-  outerContainerEl.appendChild(dataContainer3El);
+  showBoxEl.appendChild(dataContainer3El);
 
   let locationLabelEl = document.createElement("label");
   locationLabelEl.innerText = "location";
@@ -106,7 +106,7 @@ for (const iterator of shows) {
   buttonEl.innerText = "buy tickets";
   buttonEl.classList.add("button");
   buttonEl.classList.add("shows__button");
-  outerContainerEl.appendChild(buttonEl);
+  showBoxEl.appendChild(buttonEl);
 }
 
 //get the showbox array, and register click events
