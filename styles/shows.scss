@@ -135,8 +135,6 @@
 
     @include desktop {
       cursor: pointer;
-      justify-content: flex-end;
-      position: relative;
     }
   }
 
@@ -151,15 +149,13 @@
 
   &__date-wrapper {
     @include desktop {
-      position: absolute;
-      left: 1.125rem;
+      width: 16rem;
     }
   }
 
   &__labels {
     @include tablet {
       margin: 1.5rem 1.125rem 0;
-      width: 71%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -167,9 +163,6 @@
 
     @include desktop {
       margin: 2rem 1.125rem 0;
-      width: 75%;
-      justify-content: flex-end;
-      position: relative;
     }
   }
 
@@ -184,9 +177,12 @@
 
   &__date-label {
     @include desktop {
-      position: absolute;
-      left: 0;
+      width: 16rem;
     }
+  }
+
+  &__button-placeholder {
+    width: 9.6875rem;
   }
 
   &__mobile-label {
