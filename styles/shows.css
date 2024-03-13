@@ -176,7 +176,13 @@
   }
 }
 .shows__button-placeholder {
-  width: 9.6875rem;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__button-placeholder {
+    display: inline-block;
+    width: 9.6875rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .shows__mobile-label {

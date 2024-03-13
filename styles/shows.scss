@@ -182,7 +182,12 @@
   }
 
   &__button-placeholder {
-    width: 9.6875rem;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      width: 9.6875rem;
+    }
   }
 
   &__mobile-label {
