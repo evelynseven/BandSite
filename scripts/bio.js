@@ -56,7 +56,6 @@ function dynamicTS(dateString, currentTimestamp) {
   );
   const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-  //show dynamic timestamp if under 1 years
   if (daysDifference < 365) {
     if (daysDifference > 30) {
       //show only months if under 1 year
@@ -79,15 +78,7 @@ function dynamicTS(dateString, currentTimestamp) {
       }
     }
   } else {
-    //show exact date if over 1 years
-    // format the time
-    if (timestamp.getDate() < 10) {
-      date = "0" + date;
-    }
-    if (timestamp.getMonth() + 1 < 10) {
-      month = "0" + month;
-    }
-    dynamicTimestamp = `${month}/${date}/${year}`;
+    dynamicTimestamp = `${yearsDifference} years ago`;
   }
 
   return dynamicTimestamp;

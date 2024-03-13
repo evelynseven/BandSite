@@ -48,9 +48,7 @@
 }
 @media screen and (min-width: 1280px) {
   .hero h1 {
-    display: inline-block;
     width: auto;
-    margin-right: 7vw;
   }
 }
 @media screen and (min-width: 768px) {
@@ -58,6 +56,11 @@
     font-size: 1.5rem;
     font-weight: 600;
   }
+}
+.hero__second-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .hero__song {
   width: 100%;
