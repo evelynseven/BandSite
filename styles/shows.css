@@ -101,6 +101,14 @@
 .shows p {
   margin: 0;
 }
+.shows__shows-container {
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .shows__shows-container {
+    width: 75%;
+  }
+}
 .shows__show-box {
   width: 100%;
   padding: 1rem;
@@ -123,29 +131,29 @@
 @media screen and (min-width: 1280px) {
   .shows__show-box {
     cursor: pointer;
-  }
-}
-.shows__shows-container {
-  width: 100%;
-}
-@media screen and (min-width: 1280px) {
-  .shows__shows-container {
-    width: 75%;
+    justify-content: flex-end;
+    position: relative;
   }
 }
 .shows__data-container {
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 0.5rem 0;
 }
 @media screen and (min-width: 768px) {
   .shows__data-container {
-    width: 8rem;
+    width: 10rem;
     margin: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__date-wrapper {
+    position: absolute;
+    left: 1.125rem;
   }
 }
 @media screen and (min-width: 768px) {
   .shows__labels {
     margin: 1.5rem 1.125rem 0;
-    width: 66.5%;
+    width: 71%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -154,6 +162,9 @@
 @media screen and (min-width: 1280px) {
   .shows__labels {
     margin: 2rem 1.125rem 0;
+    width: 75%;
+    justify-content: flex-end;
+    position: relative;
   }
 }
 .shows__label-container {
@@ -161,8 +172,14 @@
 }
 @media screen and (min-width: 768px) {
   .shows__label-container {
-    width: 8rem;
+    width: 10rem;
     display: inline-block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows__date-label {
+    position: absolute;
+    left: 0;
   }
 }
 @media screen and (min-width: 768px) {
@@ -175,9 +192,11 @@
 }
 .shows__button {
   width: 100%;
+  margin-top: 0.6rem;
 }
 @media screen and (min-width: 768px) {
   .shows__button {
     width: 9.6875rem;
+    margin: 0;
   }
 }/*# sourceMappingURL=shows.css.map */

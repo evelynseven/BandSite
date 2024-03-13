@@ -104,6 +104,14 @@
     margin: 0;
   }
 
+  &__shows-container {
+    width: 100%;
+
+    @include desktop {
+      width: 75%;
+    }
+  }
+
   &__show-box {
     width: 100%;
     padding: 1rem;
@@ -126,30 +134,31 @@
 
     @include desktop {
       cursor: pointer;
-    }
-  }
-
-  &__shows-container {
-    width: 100%;
-
-    @include desktop {
-      width: 75%;
+      justify-content: flex-end;
+      position: relative;
     }
   }
 
   &__data-container {
-    margin: 0 0 0.8rem 0;
+    margin: 0 0 0.5rem 0;
 
     @include tablet {
-      width: 8rem;
+      width: 10rem;
       margin: 0;
+    }
+  }
+
+  &__date-wrapper {
+    @include desktop {
+      position: absolute;
+      left: 1.125rem;
     }
   }
 
   &__labels {
     @include tablet {
       margin: 1.5rem 1.125rem 0;
-      width: 66.5%;
+      width: 71%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -157,6 +166,9 @@
 
     @include desktop {
       margin: 2rem 1.125rem 0;
+      width: 75%;
+      justify-content: flex-end;
+      position: relative;
     }
   }
 
@@ -164,11 +176,15 @@
     display: none;
 
     @include tablet {
-      width: 8rem;
+      width: 10rem;
       display: inline-block;
     }
+  }
 
+  &__date-label {
     @include desktop {
+      position: absolute;
+      left: 0;
     }
   }
 
@@ -184,9 +200,11 @@
 
   &__button {
     width: 100%;
+    margin-top: 0.6rem;
 
     @include tablet {
       width: 9.6875rem;
+      margin: 0;
     }
   }
 }

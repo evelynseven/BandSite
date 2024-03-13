@@ -50,6 +50,7 @@ for (const iterator of shows) {
   //create the data container1
   let dataContainer1El = document.createElement("div");
   dataContainer1El.classList.add("shows__data-container");
+  dataContainer1El.classList.add("shows__date-wrapper");
   showBoxEl.appendChild(dataContainer1El);
 
   let dateLabelEl = document.createElement("label");
