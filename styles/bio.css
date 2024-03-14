@@ -184,16 +184,12 @@
 }
 @media screen and (min-width: 768px) {
   .gallery__img-container {
-    height: 53vw;
+    width: 100%;
+    aspect-ratio: 100/57.5;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .gallery__img-container {
-    height: 46vw;
   }
 }
 .gallery img {
@@ -202,13 +198,12 @@
 @media screen and (min-width: 768px) {
   .gallery img {
     margin: 0;
-    width: 31%;
+    width: 32%;
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery img {
     filter: grayscale(100%);
-    width: 32%;
   }
 }
 .gallery img:hover {

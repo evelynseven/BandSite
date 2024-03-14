@@ -178,15 +178,12 @@
 
   &__img-container {
     @include tablet {
-      height: 53vw;
+      width: 100%;
+      aspect-ratio: 100/57.5;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: space-between;
-    }
-
-    @include desktop {
-      height: 46vw;
     }
   }
 
@@ -195,12 +192,11 @@
 
     @include tablet {
       margin: 0;
-      width: 31%;
+      width: 32%;
     }
 
     @include desktop {
       filter: grayscale(100%);
-      width: 32%;
     }
 
     &:hover {

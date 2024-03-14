@@ -63,9 +63,11 @@
   }
 
   &__second-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__song {

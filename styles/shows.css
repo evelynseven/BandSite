@@ -57,10 +57,12 @@
     font-weight: 600;
   }
 }
-.hero__second-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (min-width: 1280px) {
+  .hero__second-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .hero__song {
   width: 100%;
