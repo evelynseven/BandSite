@@ -55,7 +55,6 @@ for (const iterator of shows) {
 
   let dateLabelEl = document.createElement("label");
   dateLabelEl.innerText = "date";
-  dateLabelEl.classList.add("label");
   dateLabelEl.classList.add("shows__mobile-label");
   dataContainer1El.appendChild(dateLabelEl);
 
@@ -71,7 +70,6 @@ for (const iterator of shows) {
 
   let venueLabelEl = document.createElement("label");
   venueLabelEl.innerText = "venue";
-  venueLabelEl.classList.add("label");
   venueLabelEl.classList.add("shows__mobile-label");
   dataContainer2El.appendChild(venueLabelEl);
 
@@ -86,7 +84,6 @@ for (const iterator of shows) {
 
   let locationLabelEl = document.createElement("label");
   locationLabelEl.innerText = "location";
-  locationLabelEl.classList.add("label");
   locationLabelEl.classList.add("shows__mobile-label");
   dataContainer3El.appendChild(locationLabelEl);
 
