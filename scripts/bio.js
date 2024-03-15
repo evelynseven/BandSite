@@ -27,10 +27,6 @@ let comments = [
   },
 ];
 
-let divideLineEl = document.createElement("div");
-divideLineEl.classList.add("comments__divide-line");
-commentsContainerEl.appendChild(divideLineEl);
-
 function dynamicTS(dateString, currentTimestamp) {
   let dynamicTimestamp;
 
@@ -74,7 +70,16 @@ function dynamicTS(dateString, currentTimestamp) {
 }
 
 function renderAllComments(comments) {
-  for (let iterator of comments) {
+  for (let i = 0; i < comments.length; i++) {
+    let iterator = comments[i];
+
+    //create a divideLineTop if it's the first item in the array
+    if (i === 0) {
+      let divideLineTopEl = document.createElement("div");
+      divideLineTopEl.classList.add("comments__divide-line");
+      commentsContainerEl.appendChild(divideLineTopEl);
+    }
+
     //create the comment box
     let commentBoxEl = document.createElement("div");
     commentBoxEl.classList.add("comments__form-content-box");
