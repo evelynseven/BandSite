@@ -91,7 +91,7 @@
 }
 @media screen and (min-width: 1280px) {
   .shows {
-    padding: 2rem 8rem 2rem;
+    padding: 2.25rem 8rem;
     display: flex;
     justify-content: space-between;
   }
@@ -112,7 +112,7 @@
 }
 @media screen and (min-width: 1280px) {
   .shows__shows-container {
-    width: 75%;
+    width: 80%;
   }
 }
 .shows__show-box {
@@ -120,7 +120,7 @@
   padding: 1rem;
   border-bottom: 1px solid #e1e1e1;
 }
-.shows__show-box--hovered {
+.shows__show-box:hover:not([class*=selected]) {
   background-color: #fafafa;
 }
 .shows__show-box--selected {
@@ -128,7 +128,7 @@
 }
 @media screen and (min-width: 768px) {
   .shows__show-box {
-    padding: 1.5rem 1.125rem;
+    padding: 1.125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;

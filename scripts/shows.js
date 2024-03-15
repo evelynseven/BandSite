@@ -1,11 +1,8 @@
-//get parent container
 const showsEl = document.querySelector(".shows__shows-container");
 
-//add shows container
 const showsContainerEl = document.createElement("div");
 showsEl.appendChild(showsContainerEl);
 
-//define the shows array
 const shows = [
   {
     date: "Mon Sept 09 2024",
@@ -39,15 +36,12 @@ const shows = [
   },
 ];
 
-//populate the shows
 for (const iterator of shows) {
   let index = 0;
-  //create the show box
   let showBoxEl = document.createElement("div");
   showBoxEl.classList.add("shows__show-box");
   showsContainerEl.appendChild(showBoxEl);
 
-  //create the data container1
   let dataContainer1El = document.createElement("div");
   dataContainer1El.classList.add("shows__data-container");
   dataContainer1El.classList.add("shows__date-wrapper");
@@ -63,7 +57,6 @@ for (const iterator of shows) {
   dateEl.classList.add("shows__show-date");
   dataContainer1El.appendChild(dateEl);
 
-  //create the data container2
   let dataContainer2El = document.createElement("div");
   dataContainer2El.classList.add("shows__data-container");
   showBoxEl.appendChild(dataContainer2El);
@@ -77,7 +70,6 @@ for (const iterator of shows) {
   venueEl.innerText = iterator.venue;
   dataContainer2El.appendChild(venueEl);
 
-  //create the data container3
   let dataContainer3El = document.createElement("div");
   dataContainer3El.classList.add("shows__data-container");
   showBoxEl.appendChild(dataContainer3El);
@@ -91,7 +83,6 @@ for (const iterator of shows) {
   locationEl.innerText = iterator.location;
   dataContainer3El.appendChild(locationEl);
 
-  //create the button
   const buttonEl = document.createElement("button");
   buttonEl.innerText = "buy tickets";
   buttonEl.classList.add("button");
@@ -101,19 +92,7 @@ for (const iterator of shows) {
   index++;
 }
 
-//get the showbox array
 let showboxs = document.querySelectorAll(".shows__show-box");
-
-//register hover events
-for (let iterator of showboxs) {
-  iterator.addEventListener("mouseenter", () => {
-    iterator.classList.add("shows__show-box--hovered");
-  });
-
-  iterator.addEventListener("mouseleave", () => {
-    iterator.classList.remove("shows__show-box--hovered");
-  });
-}
 
 //register click events
 for (let iterator of showboxs) {
