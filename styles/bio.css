@@ -370,7 +370,8 @@
 }
 .comments__divide-line {
   width: 100%;
-  border-bottom: 1px solid #e1e1e1;
+  border: none;
+  border-top: 1px solid #e1e1e1;
 }
 .comments__info-first-row {
   display: flex;

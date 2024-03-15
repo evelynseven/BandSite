@@ -75,7 +75,7 @@ function renderAllComments(comments) {
 
     //create a divideLineTop if it's the first item in the array
     if (i === 0) {
-      let divideLineTopEl = document.createElement("div");
+      let divideLineTopEl = document.createElement("hr");
       divideLineTopEl.classList.add("comments__divide-line");
       commentsContainerEl.appendChild(divideLineTopEl);
     }
@@ -119,7 +119,7 @@ function renderAllComments(comments) {
     infoBoxEl.appendChild(commentEl);
 
     //create the line below the comment
-    let divideLineEl = document.createElement("div");
+    let divideLineEl = document.createElement("hr");
     divideLineEl.classList.add("comments__divide-line");
     commentsContainerEl.appendChild(divideLineEl);
   }

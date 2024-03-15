@@ -364,7 +364,8 @@
 
   &__divide-line {
     width: 100%;
-    border-bottom: 1px solid $secondary-color-mercury;
+    border: none;
+    border-top: 1px solid $secondary-color-mercury;
   }
 
   &__info-first-row {
