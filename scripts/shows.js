@@ -76,16 +76,14 @@ let shows = [];
 bandSiteApi.getShows().then((data) => {
   shows = data;
   renderShows(shows);
+
+  let showboxs = document.querySelectorAll(".shows__show-box");
+  for (let iterator of showboxs) {
+    iterator.addEventListener("click", () => {
+      for (let showbox of showboxs) {
+        showbox.classList.remove("shows__show-box--selected");
+      }
+      iterator.classList.add("shows__show-box--selected");
+    });
+  }
 });
-
-let showboxs = document.querySelectorAll(".shows__show-box");
-
-//register click events
-for (let iterator of showboxs) {
-  iterator.addEventListener("click", () => {
-    for (let showbox of showboxs) {
-      showbox.classList.remove("shows__show-box--selected");
-    }
-    iterator.classList.toggle("shows__show-box--selected");
-  });
-}
