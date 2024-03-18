@@ -3,64 +3,48 @@ let formEl = document.querySelector(".comments__form");
 let commentsContainerEl = document.createElement("div");
 formEl.appendChild(commentsContainerEl);
 
-let comments = [
-  {
-    userName: "Victor Pinto",
-    avatar: "",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    timeStamp: "11/02/2023",
-  },
-  {
-    userName: "Christina Cabrera",
-    avatar: "",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    timeStamp: "10/28/2023",
-  },
-  {
-    userName: "Isaac Tadesse",
-    avatar: "",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    timeStamp: "10/20/2023",
-  },
-];
-
-function dynamicTS(dateString, currentTimestamp) {
+function dynamicTS(commentTimestamp, currentTimestamp) {
   let dynamicTimestamp;
 
-  let timestamp = new Date(dateString);
-  date = timestamp.getDate();
-  month = timestamp.getMonth() + 1;
-  year = timestamp.getFullYear();
+  let commentTime = new Date(commentTimestamp);
+  let currentTime = new Date(currentTimestamp);
 
-  const timeDifference = Math.abs(currentTimestamp - timestamp);
-  const yearsDifference =
-    currentTimestamp.getFullYear() - timestamp.getFullYear();
-  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-  const monthsDifference = Math.floor(daysDifference / 30);
-  const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
-  const minutesDifference = Math.floor(
-    (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+  const yearsDifference = Math.abs(
+    currentTime.getFullYear() - commentTime.getFullYear()
   );
-  const secondsDifference = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  const monthsDifference = Math.abs(
+    currentTime.getMonth() - commentTime.getMonth()
+  );
+  const daysDifference = Math.abs(
+    currentTime.getDate() - commentTime.getDate()
+  );
+  const hoursDifference = Math.abs(
+    currentTime.getHours() - commentTime.getHours()
+  );
+  const minutesDifference = Math.abs(
+    currentTime.getMinutes() - commentTime.getMinutes()
+  );
+  const secondsDifference = Math.abs(
+    currentTime.getSeconds() - commentTime.getSeconds()
+  );
 
-  if (daysDifference < 365) {
-    if (daysDifference > 30) {
-      dynamicTimestamp = `${monthsDifference} months ago`;
-    } else if (daysDifference > 1) {
-      dynamicTimestamp = `${daysDifference} days ago`;
-    } else {
-      if (minutesDifference > 60) {
-        dynamicTimestamp = `${hoursDifference} hours ago`;
-      } else {
-        if (secondsDifference > 60) {
-          dynamicTimestamp = `${minutesDifference} minutes ago`;
+  if (yearsDifference < 1) {
+    if (monthsDifference < 1) {
+      if (daysDifference < 1) {
+        if (hoursDifference < 1) {
+          if (minutesDifference < 1) {
+            dynamicTimestamp = `${secondsDifference} seconds ago`;
+          } else {
+            dynamicTimestamp = `${minutesDifference} minutes ago`;
+          }
         } else {
-          dynamicTimestamp = `${secondsDifference} seconds ago`;
+          dynamicTimestamp = `${hoursDifference} hours ago`;
         }
+      } else {
+        dynamicTimestamp = `${daysDifference} days ago`;
       }
+    } else {
+      dynamicTimestamp = `${monthsDifference} months ago`;
     }
   } else {
     dynamicTimestamp = `${yearsDifference} years ago`;
@@ -88,7 +72,6 @@ function renderAllComments(comments) {
     //create the avatar
     let avatarEl = document.createElement("div");
     avatarEl.classList.add("comments__default-user-img");
-    avatarEl.style.backgroundImage = `url("${iterator.avatar}")`;
     commentBoxEl.appendChild(avatarEl);
 
     //create the info box
@@ -104,9 +87,9 @@ function renderAllComments(comments) {
     //create first row's elements
     let userNameEl = document.createElement("p");
     let timeStampEl = document.createElement("p");
-    userNameEl.innerText = iterator.userName;
+    userNameEl.innerText = iterator.name;
     //get the current time, and call the dynamicTS function
-    timeStampEl.innerText = dynamicTS(iterator.timeStamp, new Date());
+    timeStampEl.innerText = dynamicTS(iterator.timestamp, new Date());
     userNameEl.classList.add("comments__info-username");
     timeStampEl.classList.add("comments__info-timestamp");
     infoFirstRowEl.appendChild(userNameEl);
@@ -125,15 +108,16 @@ function renderAllComments(comments) {
   }
 }
 
-renderAllComments(comments);
+let comments = [];
+bandSiteApi.getComments().then((data) => {
+  comments = data.sort((a, b) => b.timestamp - a.timestamp);
+  renderAllComments(comments);
+});
 
 let avatar = document.querySelector(".comments__current-user-img");
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  let avatar = document.getElementById("comments__current-user-img");
-  let avatarSrc = avatar.getAttribute("src");
 
   let userName = e.target.userName.value;
   let userComment = e.target.userComment.value;
@@ -142,29 +126,25 @@ formEl.addEventListener("submit", (e) => {
   let commentInputEl = e.target.userComment;
 
   if (userName.trim() !== "" && userComment.trim() !== "") {
-    let commentTimeStamp = new Date();
-    let second, minute, hour, date, month, year;
-    second = commentTimeStamp.getSeconds();
-    minute = commentTimeStamp.getMinutes();
-    hour = commentTimeStamp.getHours();
-    date = commentTimeStamp.getDate();
-    month = commentTimeStamp.getMonth() + 1;
-    year = commentTimeStamp.getFullYear();
-
-    let commentDate = `${month}/${date}/${year} ${hour}:${minute}:${second}`;
-
-    comments.unshift({
-      avatar: avatarSrc,
-      userName: userName,
+    const newComment = {
+      name: userName,
       comment: userComment,
-      timeStamp: commentDate,
-    });
+    };
 
-    commentsContainerEl.innerHTML = "";
-    renderAllComments(comments);
+    bandSiteApi
+      .postComment(newComment)
+      .then(() => {
+        return bandSiteApi.getComments();
+      })
+      .then((data) => {
+        commentsContainerEl.innerHTML = "";
+        comments = data.sort((a, b) => b.timestamp - a.timestamp);
+        console.log(comments);
+        renderAllComments(comments);
 
-    nameInputEl.value = "";
-    commentInputEl.value = "";
+        nameInputEl.value = "";
+        commentInputEl.value = "";
+      });
   } else {
     if (userName.trim() === "") {
       nameInputEl.classList.add("comments__name-input--error");
