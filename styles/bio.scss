@@ -373,8 +373,11 @@
     justify-content: space-between;
   }
 
-  &__info-second-row {
-    margin-bottom: 1.2rem;
+  &__info-third-row {
+    margin: 0 0 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   &__info-username {
@@ -385,5 +388,18 @@
   &__info-timestamp {
     color: $primary-color-silver;
     margin-bottom: 0;
+  }
+
+  &__like-count {
+    color: $primary-color-black;
+    font-size: 0.875rem;
+    margin: 0.18rem 0 0;
+  }
+
+  &__icon {
+    height: 0.875rem;
+    width: auto;
+    margin: 0.3rem 0.5rem;
+    cursor: pointer;
   }
 }

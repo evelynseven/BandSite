@@ -83,7 +83,6 @@ function renderAllComments(comments) {
     let infoFirstRowEl = document.createElement("div");
     infoFirstRowEl.classList.add("comments__info-first-row");
     infoBoxEl.appendChild(infoFirstRowEl);
-
     //create first row's elements
     let userNameEl = document.createElement("p");
     let timeStampEl = document.createElement("p");
@@ -100,6 +99,50 @@ function renderAllComments(comments) {
     commentEl.innerText = iterator.comment;
     commentEl.classList.add("comments__info-second-row");
     infoBoxEl.appendChild(commentEl);
+
+    //create the info's third row box
+    let infoThirdRowEl = document.createElement("div");
+    infoThirdRowEl.classList.add("comments__info-third-row");
+    infoBoxEl.appendChild(infoThirdRowEl);
+    //create third row's elements
+    let likeCount = document.createElement("span");
+    likeCount.innerText = iterator.likes;
+    const likeIcon = document.createElement("img");
+    likeIcon.src = "./assets/icons/icon-like.svg";
+    const deleteIcon = document.createElement("img");
+    deleteIcon.src = "./assets/icons/icon-delete.svg";
+    likeCount.classList.add("comments__like-count");
+    likeIcon.classList.add("comments__icon");
+    deleteIcon.classList.add("comments__icon");
+    infoThirdRowEl.appendChild(likeCount);
+    infoThirdRowEl.appendChild(likeIcon);
+    infoThirdRowEl.appendChild(deleteIcon);
+
+    //add click events to elements
+    likeIcon.addEventListener("click", () => {
+      bandSiteApi
+        .likeComment(iterator.id)
+        .then(() => {
+          return bandSiteApi.getComments();
+        })
+        .then((data) => {
+          commentsContainerEl.innerHTML = "";
+          comments = data.sort((a, b) => b.timestamp - a.timestamp);
+          renderAllComments(comments);
+        });
+    });
+    deleteIcon.addEventListener("click", () => {
+      bandSiteApi
+        .deleteComment(iterator.id)
+        .then(() => {
+          return bandSiteApi.getComments();
+        })
+        .then((data) => {
+          commentsContainerEl.innerHTML = "";
+          comments = data.sort((a, b) => b.timestamp - a.timestamp);
+          renderAllComments(comments);
+        });
+    });
 
     //create the line below the comment
     let divideLineEl = document.createElement("hr");
@@ -139,7 +182,6 @@ formEl.addEventListener("submit", (e) => {
       .then((data) => {
         commentsContainerEl.innerHTML = "";
         comments = data.sort((a, b) => b.timestamp - a.timestamp);
-        console.log(comments);
         renderAllComments(comments);
 
         nameInputEl.value = "";

@@ -377,8 +377,11 @@
   display: flex;
   justify-content: space-between;
 }
-.comments__info-second-row {
-  margin-bottom: 1.2rem;
+.comments__info-third-row {
+  margin: 0 0 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .comments__info-username {
   font-weight: 600;
@@ -387,4 +390,15 @@
 .comments__info-timestamp {
   color: #afafaf;
   margin-bottom: 0;
+}
+.comments__like-count {
+  color: #323232;
+  font-size: 0.875rem;
+  margin: 0.18rem 0 0;
+}
+.comments__icon {
+  height: 0.875rem;
+  width: auto;
+  margin: 0.3rem 0.5rem;
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */

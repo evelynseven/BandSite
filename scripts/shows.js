@@ -75,7 +75,6 @@ function renderShows(shows) {
 let shows = [];
 bandSiteApi.getShows().then((data) => {
   shows = data;
-  console.log(shows);
   renderShows(shows);
 });
 
