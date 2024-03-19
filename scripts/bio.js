@@ -152,12 +152,15 @@ function renderAllComments(comments) {
 }
 
 let comments = [];
-bandSiteApi.getComments().then((data) => {
-  comments = data.sort((a, b) => b.timestamp - a.timestamp);
-  renderAllComments(comments);
-});
-
-let avatar = document.querySelector(".comments__current-user-img");
+bandSiteApi
+  .getComments()
+  .then((data) => {
+    comments = data.sort((a, b) => b.timestamp - a.timestamp);
+    renderAllComments(comments);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();

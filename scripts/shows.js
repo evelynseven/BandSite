@@ -70,12 +70,6 @@ function renderShows(shows) {
 
     index++;
   }
-}
-
-let shows = [];
-bandSiteApi.getShows().then((data) => {
-  shows = data;
-  renderShows(shows);
 
   let showboxs = document.querySelectorAll(".shows__show-box");
   for (let iterator of showboxs) {
@@ -86,4 +80,15 @@ bandSiteApi.getShows().then((data) => {
       iterator.classList.add("shows__show-box--selected");
     });
   }
-});
+}
+
+let shows = [];
+bandSiteApi
+  .getShows()
+  .then((data) => {
+    shows = data;
+    renderShows(shows);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
