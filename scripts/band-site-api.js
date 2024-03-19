@@ -5,10 +5,10 @@ class BandSiteApi {
   }
 
   async postComment(newComment) {
-    return await axios.post(this.baseUrl + "/comments?api_key=" + this.apiKey, {
-      name: newComment.name,
-      comment: newComment.comment,
-    });
+    return await axios.post(
+      this.baseUrl + "/comments?api_key=" + this.apiKey,
+      newComment
+    );
   }
 
   async likeComment(commentID) {
