@@ -1,3 +1,7 @@
+import { BandSiteApi } from "./band-site-api.js";
+const apiKey = "8b351696-1ddb-4f8b-b066-e302f8d4640b";
+const bandSiteApi = new BandSiteApi(apiKey);
+
 const showsEl = document.querySelector(".shows__shows-container");
 
 const showsContainerEl = document.createElement("div");
@@ -31,7 +35,6 @@ function renderShows(shows) {
     dataContainer1El.appendChild(dateLabelEl);
 
     let dateEl = document.createElement("p");
-    //call dateFormat function
     dateEl.innerText = dateFormat(iterator.date);
     dateEl.classList.add("shows__show-date");
     dataContainer1El.appendChild(dateEl);

@@ -1,3 +1,7 @@
+import { BandSiteApi } from "./band-site-api.js";
+const apiKey = "8b351696-1ddb-4f8b-b066-e302f8d4640b";
+const bandSiteApi = new BandSiteApi(apiKey);
+
 let formEl = document.querySelector(".comments__form");
 
 let commentsContainerEl = document.createElement("div");

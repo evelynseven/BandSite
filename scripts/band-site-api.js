@@ -1,4 +1,4 @@
-class BandSiteApi {
+export class BandSiteApi {
   constructor(apiKey) {
     this.apiKey = apiKey;
     this.baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com";
@@ -45,6 +45,3 @@ class BandSiteApi {
     }
   }
 }
-
-const apiKey = "8b351696-1ddb-4f8b-b066-e302f8d4640b";
-const bandSiteApi = new BandSiteApi(apiKey);
