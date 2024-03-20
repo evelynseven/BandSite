@@ -54,19 +54,10 @@ function dynamicTS(commentTimestamp, currentTimestamp) {
 }
 
 function renderAllComments(comments) {
-  for (let i = 0; i < comments.length; i++) {
-    let iterator = comments[i];
-
-    //create a divideLineTop if it's the first item in the array
-    if (i === 0) {
-      let divideLineTopEl = document.createElement("hr");
-      divideLineTopEl.classList.add("comments__divide-line");
-      commentsContainerEl.appendChild(divideLineTopEl);
-    }
-
+  for (const iterator of comments) {
     //create the comment box
     let commentBoxEl = document.createElement("div");
-    commentBoxEl.classList.add("comments__form-content-box");
+    commentBoxEl.classList.add("comments__form-comment-box");
     commentsContainerEl.appendChild(commentBoxEl);
 
     //create the avatar
@@ -145,9 +136,9 @@ function renderAllComments(comments) {
     });
 
     //create the line below the comment
-    let divideLineEl = document.createElement("hr");
-    divideLineEl.classList.add("comments__divide-line");
-    commentsContainerEl.appendChild(divideLineEl);
+    // let divideLineEl = document.createElement("hr");
+    // divideLineEl.classList.add("comments__divide-line");
+    // commentsContainerEl.appendChild(divideLineEl);
   }
 }
 
