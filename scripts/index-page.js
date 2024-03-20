@@ -55,37 +55,32 @@ function dynamicTS(commentTimestamp, currentTimestamp) {
 
 function renderAllComments(comments) {
   for (const iterator of comments) {
-    //create the comment box
     let commentBoxEl = document.createElement("div");
     commentBoxEl.classList.add("comments__form-comment-box");
     commentsContainerEl.appendChild(commentBoxEl);
 
-    //create the avatar
     let avatarEl = document.createElement("div");
     avatarEl.classList.add("comments__default-user-img");
     commentBoxEl.appendChild(avatarEl);
 
-    //create the info box
     let infoBoxEl = document.createElement("div");
     infoBoxEl.classList.add("comments__form-input-box");
     commentBoxEl.appendChild(infoBoxEl);
 
-    //create the info's first row box
     let infoFirstRowEl = document.createElement("div");
     infoFirstRowEl.classList.add("comments__info-first-row");
     infoBoxEl.appendChild(infoFirstRowEl);
-    //create first row's elements
+
     let userNameEl = document.createElement("p");
     let timeStampEl = document.createElement("p");
     userNameEl.innerText = iterator.name;
-    //get the current time, and call the dynamicTS function
+
     timeStampEl.innerText = dynamicTS(iterator.timestamp, new Date());
     userNameEl.classList.add("comments__info-username");
     timeStampEl.classList.add("comments__info-timestamp");
     infoFirstRowEl.appendChild(userNameEl);
     infoFirstRowEl.appendChild(timeStampEl);
 
-    //create second row's element
     let commentEl = document.createElement("p");
     commentEl.innerText = iterator.comment;
     commentEl.classList.add("comments__info-second-row");
@@ -109,7 +104,6 @@ function renderAllComments(comments) {
     infoThirdRowEl.appendChild(likeIcon);
     infoThirdRowEl.appendChild(deleteIcon);
 
-    //add click events to elements
     likeIcon.addEventListener("click", () => {
       bandSiteApi
         .likeComment(iterator.id)
@@ -134,11 +128,6 @@ function renderAllComments(comments) {
           renderAllComments(comments);
         });
     });
-
-    //create the line below the comment
-    // let divideLineEl = document.createElement("hr");
-    // divideLineEl.classList.add("comments__divide-line");
-    // commentsContainerEl.appendChild(divideLineEl);
   }
 }
 
